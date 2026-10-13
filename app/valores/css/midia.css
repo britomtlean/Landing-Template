@@ -1,0 +1,143 @@
+@media only screen and (max-width: 900px) {
+    .center {
+        /*border: 1px solid red;*/
+        height: 100%;
+        width: 90%;
+        padding: 3px 10px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
+
+    }
+
+    header {
+        background: #1D3340;
+        height: 100px;
+        width: 100%;
+        display: inline-block;
+        position: fixed;
+        top: 0;
+    }
+
+    #center1 {
+        display: none;
+    }
+
+    #center2 {
+        display: block;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+
+    .mobile {
+        display: inline-block;
+        width: 30px;
+        height: 100%;
+        padding-top: 20px;
+    }
+
+    div.btnMobile {
+        font-size: 24px;
+        cursor: pointer;
+        color: white;
+        text-align: center;
+    }
+
+    nav.mobile ul {
+        width: 100%;
+        top: 100px;
+        z-index: 3;
+        position: absolute;
+        left: 0;
+        display: none;
+        text-align: center;
+    }
+
+    nav.mobile li {
+        font-size: 15px;
+        background: white;
+        width: 100%;
+        border-bottom: 1px solid #000000;
+        display: block;
+        padding: 5px 0;
+        font-weight: bold;
+    }
+
+    nav.mobile li a {
+        display: block;
+        color: black;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        text-decoration: none;
+    }
+
+
+     #eu {
+    width: 100vw;
+    height: 100%;
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    font-family: "Roboto", sans-serif;
+    padding-top: 1rem;
+    overflow: hidden;
+
+    & .x{
+        display: none;
+    }
+
+    & .centerMobile{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 3rem;
+    }
+
+    & .box-img {
+        display: flex;
+        flex: 40%;
+        align-self: center;
+        justify-content: center;
+
+        & img {
+            width: 90%;
+            border-radius: 25%;
+        }
+    }
+
+    & .descricao {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        flex: 60%;
+        padding: 0 5%;
+        font-size: 0.7rem;
+        font-weight: 900;
+        color: rgb(65, 65, 65);
+        padding-bottom: 1rem;
+    }
+}
+
+
+}
+
+
+.logoMobile {
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+
+
+}

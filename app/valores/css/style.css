@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+.card {
+    display: inline-block;
+    width: 33%;
+    height: 90%;
+    border: 1px solid #3ddeed;
+    border-radius: 10px;
+    padding: 20px;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.3 ease-out;
+}
+
+.card h3 {
+    font-size: 18px;
+    padding: 20px;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+}
+
+.card:hover {
+    background: #334450;
+    border: #fff solid 2px;
+    transform: scale(1.002);
+}
+
+.card:hover .icon {
+    display: none;
+}
