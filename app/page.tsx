@@ -57,7 +57,7 @@ export default function Home() {
                         animate={{ opacity: 1 }}
                         transition={{ duration: 1.8, ease: 'easeOut', delay: 0.3 }}
                     >
-                        Bem vindo a Brits Comporration
+                        Bem vindo a Brits Corporration
                     </motion.h1>
                     <motion.h2
                         className="text-lg! font-extralight! font-led"
