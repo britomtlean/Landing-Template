@@ -9,12 +9,12 @@ import Image from 'next/image';
 
 const Values = () => {
     return (
-        <section id="values" className="flex flex-col items-center justify-center h-screen! gap-5 py-15!">
-            <div className='mb-10 w-full text-center'>
+        <section id="values" className="flex flex-col items-center justify-center h-screen! gap-5 py-10!">
+            <div className='w-full text-center'>
                 <h1>Nossos Valores</h1>
             </div>
 
-            <div className="h-full flex items-center gap-5 h-1/2! pt-20">
+            <div className="h-full flex items-center gap-5 h-2/5! pt-5">
                 <div className="card transition-all">
                     <div className="w-full flex justify-center">
                         <Image src={Mind.src} width={50} height={40} alt="Imagem de cadeado" />
@@ -56,7 +56,7 @@ const Values = () => {
                 dolorum aliquid ex iure animi.
             </p>
 
-            <Image src={Diamond.src} width={80} height={80} alt="Diamante" />
+            <h1 className='w-full font-paladins text-center'>Brits Corporation</h1>
         </section>
     );
 };

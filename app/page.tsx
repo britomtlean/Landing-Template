@@ -10,6 +10,7 @@ import Image  from '../public/Ícone Neon de Avatar Interativo.png';
 import { CgTimelapse } from 'react-icons/cg';
 import { LuTimer } from 'react-icons/lu';
 import { BsFillAlarmFill } from 'react-icons/bs';
+import Jaguar from '../public/jaguar(1).png'
 
 import { motion, useScroll, useMotionValueEvent } from 'motion/react';
 import { useRef } from 'react';
@@ -140,7 +141,8 @@ export default function Home() {
                 </h1>
                 <motion.div className="w-full h-full" ref={videoRef}>
                     <motion.img
-                        className={` mx-auto`}
+                        onClick={()=>{alert("Vamos criar um site?")}}
+                        className={` mx-auto hover:cursor-pointer`}
                         _ngcontent-pyp-c55=""
                         aria-hidden="true"
                         src={Image.src}
@@ -154,10 +156,13 @@ export default function Home() {
             }
             {
                 //AGENDA
-                <section id="agendamento" className="flex flex-col items-center justify-start gap-10 h-screen! relative pt-15!">
-                    <CgTimelapse className="absolute right-80 bottom-60 size-30" />
-                    <LuTimer className="absolute left-80 bottom-60 size-30" />
-                    <BsFillAlarmFill className="absolute  bottom-60 size-30" />
+                <section
+                    id="agendamento"
+                    className="flex flex-col items-center justify-start gap-10 h-screen! relative pt-10!"
+                >
+                    <img src={Jaguar.src} className="w-30 absolute right-80 bottom-40" />
+                    <img src={Jaguar.src} className="w-30 absolute left-80 bottom-40" />
+                    <h1 className="absolute  bottom-50 w-full font-paladins text-center">Brits Corporation</h1>
                     <h1 className="text-2xl font-bold">Agende o seu horário</h1>
 
                     <form className="flex w-1/2 flex-col gap-5 rounded-2xl bg-white/10 p-6">

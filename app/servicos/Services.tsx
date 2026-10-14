@@ -24,7 +24,7 @@ const Services = () => {
                 bg-radial from-gray-300/10 to-gray-900
                 before:content-[''] after:absolute after:inset-0 after:bg-radial after:from-gray-900/40 after:to-[#0d171f]"
             >
-                <div className="w-full h-full z-50 flex justify-center flex-col items-center gap-5">
+                <div className="w-full h-full z-50 flex justify-start flex-col items-center pt-10! gap-5">
                     <h1>Serviços</h1>
                     <Table />
                 </div>
