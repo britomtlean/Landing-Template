@@ -10,14 +10,13 @@ import Image from '../public/Ícone Neon de Avatar Interativo.png';
 import Jaguar from '../public/jaguar(1).png';
 
 import { motion, useScroll, useMotionValueEvent } from 'motion/react';
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 
 export default function Home() {
     const { scrollY } = useScroll();
     const divRef = useRef<HTMLDivElement | null>(null);
-    const videoRef = useRef<HTMLDivElement | null>(null);
+    const imageRef = useRef<HTMLDivElement | null>(null);
 
-    const [somAtivado, setSomAtivado] = useState(false);
     const audioRef = useRef<HTMLAudioElement | null>(null);
 
     const ativarSom = async () => {
@@ -46,13 +45,12 @@ export default function Home() {
         }
 
         if (scrollY.get() > 2600 && scrollY.get() < 40000) {
-            videoRef.current!.style.transform = `rotateY(${current / 2.2}deg)`;
+            imageRef.current!.style.transform = `rotateY(${current / 2.2}deg)`;
         }
     });
 
     return (
         <div className="h-full lg:flex flex-col items-center justify-center gap-10 relative transition-all">
-
             <motion.div className={`p-5 absolute z-100 opacity-100 transition-all ease-out right-40`} ref={divRef}>
                 <button className="bg-cyan-500 w-full mt-10! mx-auto animate-bounce text-xl! shadow-xl/30">
                     Entre em contato
@@ -155,9 +153,11 @@ export default function Home() {
                     Continue rolando para baixo
                 </h1>
 
-                <motion.div className="w-full h-full" ref={videoRef}>
+                <motion.div className="w-full h-full" ref={imageRef}>
                     <motion.img
-                        onClick={() => { ativarSom(); }}
+                        onClick={() => {
+                            ativarSom();
+                        }}
                         className={` mx-auto hover:cursor-pointer`}
                         _ngcontent-pyp-c55=""
                         aria-hidden="true"
