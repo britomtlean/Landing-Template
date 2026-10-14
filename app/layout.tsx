@@ -41,7 +41,7 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
                 className={`${paladins.variable} ${paladins3D.variable} ${led.variable} items-center  min-w-screen min-h-screen`}
             >
                 <header>
-                    <MenuLateral />
+                    
 
                     <h1 className={`${paladins.className} text-4xl`}>Brits</h1>
 

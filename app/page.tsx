@@ -10,25 +10,51 @@ import Image from '../public/Ícone Neon de Avatar Interativo.png';
 import Jaguar from '../public/jaguar(1).png';
 
 import { motion, useScroll, useMotionValueEvent } from 'motion/react';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
+import { TbPlayerPause, TbPlayerPlayFilled } from 'react-icons/tb';
 
 export default function Home() {
     const { scrollY } = useScroll();
     const divRef = useRef<HTMLDivElement | null>(null);
     const imageRef = useRef<HTMLDivElement | null>(null);
 
-    const audioRef = useRef<HTMLAudioElement | null>(null);
+    const [ player, setPlayer ] = useState(false);
 
-    const ativarSom = async () => {
+    const audioRef = useRef<HTMLAudioElement | null>(null);
+    const alertRef = useRef<HTMLAudioElement | null>(null);
+
+    const ativarSom = () => {
         if (!audioRef.current) {
-            audioRef.current = new Audio('/sounds/meme-fail-alert-locran-1-00-01.mp3');
+            audioRef.current = new Audio('/sounds/music.mp3');
         }
 
         const audio = audioRef.current;
 
         try {
+            if (!player) {
+                audio.currentTime = 0;
+                audio.play();
+                setPlayer(true);
+            } else {
+                audio.pause();
+                setPlayer(false);
+            }
+        } catch (error) {
+            console.error('Não foi possível reproduzir o áudio:', error);
+        }
+    };
+
+    const alert = () => {
+
+        if (!alertRef.current) {
+            alertRef.current = new Audio('/sounds/meme-fail-alert-locran-1-00-01.mp3');
+        }
+
+        const audio = alertRef.current;
+
+        try {
             audio.currentTime = 0;
-            await audio.play();
+            audio.play();
         } catch (error) {
             console.error('Não foi possível reproduzir o áudio:', error);
         }
@@ -54,6 +80,17 @@ export default function Home() {
             <motion.div className={`p-5 absolute z-100 opacity-100 transition-all ease-out right-40`} ref={divRef}>
                 <button className="bg-cyan-500 w-full mt-10! mx-auto animate-bounce text-xl! shadow-xl/30">
                     Entre em contato
+                </button>
+            </motion.div>
+
+            <motion.div className={`p-5 absolute z-100 top-10 right-80`}>
+                <button
+                    onClick={() => {
+                        ativarSom();
+                    }}
+                    className='border rounded-[100%]! p-2!'
+                >
+                    {!player ? <TbPlayerPlayFilled className="size-10" /> : <TbPlayerPause className="size-10" />}
                 </button>
             </motion.div>
 
@@ -156,7 +193,7 @@ export default function Home() {
                 <motion.div className="w-full h-full" ref={imageRef}>
                     <motion.img
                         onClick={() => {
-                            ativarSom();
+                            alert();
                         }}
                         className={` mx-auto hover:cursor-pointer`}
                         _ngcontent-pyp-c55=""
