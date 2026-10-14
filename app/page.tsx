@@ -20,48 +20,18 @@ export default function Home() {
     const [somAtivado, setSomAtivado] = useState(false);
     const audioRef = useRef<HTMLAudioElement | null>(null);
 
-    const audio = new Audio('/sounds/meme-fail-alert-locran-1-00-01.mp3');
-
-
-    const ativarSom = () => {
-        try {
-            audio.volume = 1;
-
-            // força carregamento
-            audio.load();
-
-            // desbloqueia autoplay
-            audio.play();
-
-            // pausa imediatamente
-            audio.pause();
-
-            audio.currentTime = 0;
-
-            audioRef.current = audio;
-
-            setSomAtivado(true);
-
-            console.log('✅ Som ativado');
-        } catch (err) {
-            console.error('Erro:', err);
+    const ativarSom = async () => {
+        if (!audioRef.current) {
+            audioRef.current = new Audio('/sounds/meme-fail-alert-locran-1-00-01.mp3');
         }
-    };
 
-    const tocarSom = () => {
-
-        ativarSom();
+        const audio = audioRef.current;
 
         try {
-            if (!audioRef.current) return;
-
-            audioRef.current.currentTime = 0;
-
-            audioRef.current.play();
-
-            console.log('🔊 Tocando');
-        } catch (err) {
-            console.error('Erro ao tocar:', err);
+            audio.currentTime = 0;
+            await audio.play();
+        } catch (error) {
+            console.error('Não foi possível reproduzir o áudio:', error);
         }
     };
 
@@ -187,7 +157,7 @@ export default function Home() {
 
                 <motion.div className="w-full h-full" ref={videoRef}>
                     <motion.img
-                        onClick={() => { tocarSom(); }}
+                        onClick={() => { ativarSom(); }}
                         className={` mx-auto hover:cursor-pointer`}
                         _ngcontent-pyp-c55=""
                         aria-hidden="true"
