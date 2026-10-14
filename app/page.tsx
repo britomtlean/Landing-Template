@@ -47,7 +47,7 @@ export default function Home() {
             </motion.div>
 
             <section
-                className="flex flex-col justify-start items-center gap-5 relative
+                className="flex flex-col justify-start items-center gap-5 relative pt-10!
             before:content-[''] before:absolute before:inset-0 before:-z-10 before:h-full before:w-9/10 before:border-b before:rounded-lg before:mx-auto"
             >
                 {

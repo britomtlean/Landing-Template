@@ -19,7 +19,7 @@ const Contact = () => {
             "
         >
             <div
-                className="w-full h-full px-[10%] flex flex-col justify-center items-center gap-5 relative py-10
+                className="w-full h-full px-[10%] flex flex-col justify-center items-center gap-5 relative py-20
                 bg-radial from-gray-300/10 to-gray-900
                 before:content-[''] after:absolute after:inset-0 after:bg-radial after:from-gray-900/40 after:to-[#0d171f]"
             >
@@ -27,7 +27,7 @@ const Contact = () => {
                 <div className="w-full py-10 flex justify-center items-center z-50">
                     <Localizacao />
 
-                    <div className="flex flex-col justify-center h-full w-2/5 items-center gap-4">
+                    <div className="flex flex-col justify-start h-full w-2/5 items-center gap-4 py-10">
                         <h2 className="text-2xl! font-semibold">Mídias Sociais</h2>
                         <button className="bg-blue-500 w-3/4">instagram</button>
                         <button className="bg-blue-500 w-3/4">TikTok</button>
