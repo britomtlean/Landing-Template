@@ -11,12 +11,15 @@ import { CgTimelapse } from 'react-icons/cg';
 import { LuTimer } from 'react-icons/lu';
 import { BsFillAlarmFill } from 'react-icons/bs';
 import Jaguar from '../public/jaguar(1).png'
+import { useEffect, useState } from 'react';
 
 import { motion, useScroll, useMotionValueEvent } from 'motion/react';
 import { useRef } from 'react';
+import Message from './message/Message';
 
 export default function Home() {
     const { scrollY } = useScroll();
+    const [mobile, setMobile] = useState(false);
     const divRef = useRef<HTMLDivElement | null>(null);
     const videoRef = useRef<HTMLDivElement | null>(null);
 
@@ -30,15 +33,34 @@ export default function Home() {
             divRef.current.style.top = Math.round(scrollY.get()).toString() + 'px';
         }
 
-
         if (scrollY.get() > 2600 && scrollY.get() < 40000) {
             videoRef.current!.style.transform = `rotateY(${current / 2.2}deg)`;
         }
 
-
     });
 
-    return (
+      useEffect(() => {
+          const media = window.matchMedia('(max-width: 767px)');
+
+          setMobile(media.matches);
+
+          const handleChange = (event: MediaQueryListEvent) => {
+              setMobile(event.matches);
+          };
+
+          media.addEventListener('change', handleChange);
+
+          return () => {
+              media.removeEventListener('change', handleChange);
+          };
+      }, []);
+
+    return mobile ? (
+        <section className="flex items-center justify-center flex-col gap-5">
+            <h1 className="w-full text-black! text-center animate-pulse text-white!">Mobile detected</h1>
+            <Message />
+        </section>
+    ) : (
         <div className="h-full hidden lg:flex flex-col items-center justify-center gap-10 relative transition-all">
             <motion.div className={`p-5 absolute z-100 opacity-100 transition-all ease-out right-40`} ref={divRef}>
                 <button className="bg-green-500 w-full mt-10! mx-auto animate-bounce text-xl! shadow-xl/30">
@@ -141,7 +163,9 @@ export default function Home() {
                 </h1>
                 <motion.div className="w-full h-full" ref={videoRef}>
                     <motion.img
-                        onClick={()=>{alert("Vamos criar um site?")}}
+                        onClick={() => {
+                            alert('Vamos criar um site?');
+                        }}
                         className={` mx-auto hover:cursor-pointer`}
                         _ngcontent-pyp-c55=""
                         aria-hidden="true"
@@ -264,9 +288,9 @@ export default function Home() {
                 </section>
             }
             <section
-                className="p-[0%]! relative overflow-hidden! transform-3d
+                className="p-[0%]! relative overflow-hidden! transform-3d h-screen!
                 bg-[length:100%_100%]
-                [mask-image:linear-gradient(to_top,transparent_0%,black_10%,black_96%,transparent_100%)]
+                [mask-image:linear-gradient(to_top,transparent_0%,black_5%,black_95%,transparent_100%)]
                 after:[mask-image:linear-gradient(to_top,transparent_0%,black_0%,black_80%,transparent_100%)]
                 after:rounded-2xl after:pointer-events-none"
             >

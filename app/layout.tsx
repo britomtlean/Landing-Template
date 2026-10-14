@@ -28,7 +28,6 @@ export const led = localFont({
     display: 'swap',
 });
 
-
 export const metadata: Metadata = {
     title: 'Landind Page',
     description: 'Minha Landing Page',
@@ -37,7 +36,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<'/'>) {
     return (
         <html lang="pt-br" className={`h-full antialiased scroll-smooth`}>
-            <body className={`${paladins.variable} ${paladins3D.variable} ${led.variable}`}>
+            <body
+                className={`${paladins.variable} ${paladins3D.variable} ${led.variable} items-center  min-w-screen min-h-screen`}
+            >
                 <header>
                     <MenuLateral />
 
@@ -64,7 +65,6 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
                     <button className="bg-green-500">Contato</button>
                 </header>
                 <main>{children}</main>
-
                 <footer className="shadow-xl/30 shadow-[0_0_40px_2px_rgba(180,197,223,0.5)] inset-shadow-sm border-t">
                     <div className="h-full w-full flex flex-col justify-center items-center gap-10">
                         <div className="flex justify-center items-center gap-6 w-full lg:gap-20">
