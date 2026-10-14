@@ -6,16 +6,64 @@ import Values from './valores/Values';
 import Services from './servicos/Services';
 import About from './sobre/About';
 import Contact from './contato/Contact';
-import Image  from '../public/Ícone Neon de Avatar Interativo.png';
-import Jaguar from '../public/jaguar(1).png'
+import Image from '../public/Ícone Neon de Avatar Interativo.png';
+import Jaguar from '../public/jaguar(1).png';
 
 import { motion, useScroll, useMotionValueEvent } from 'motion/react';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 
 export default function Home() {
     const { scrollY } = useScroll();
     const divRef = useRef<HTMLDivElement | null>(null);
     const videoRef = useRef<HTMLDivElement | null>(null);
+
+    const [somAtivado, setSomAtivado] = useState(false);
+    const audioRef = useRef<HTMLAudioElement | null>(null);
+
+    const audio = new Audio('/sounds/meme-fail-alert-locran-1-00-01.mp3');
+
+
+    const ativarSom = () => {
+        try {
+            audio.volume = 1;
+
+            // força carregamento
+            audio.load();
+
+            // desbloqueia autoplay
+            audio.play();
+
+            // pausa imediatamente
+            audio.pause();
+
+            audio.currentTime = 0;
+
+            audioRef.current = audio;
+
+            setSomAtivado(true);
+
+            console.log('✅ Som ativado');
+        } catch (err) {
+            console.error('Erro:', err);
+        }
+    };
+
+    const tocarSom = () => {
+
+        ativarSom();
+
+        try {
+            if (!audioRef.current) return;
+
+            audioRef.current.currentTime = 0;
+
+            audioRef.current.play();
+
+            console.log('🔊 Tocando');
+        } catch (err) {
+            console.error('Erro ao tocar:', err);
+        }
+    };
 
     useMotionValueEvent(scrollY, 'change', (current) => {
         console.log(Math.round(scrollY.get()));
@@ -30,87 +78,89 @@ export default function Home() {
         if (scrollY.get() > 2600 && scrollY.get() < 40000) {
             videoRef.current!.style.transform = `rotateY(${current / 2.2}deg)`;
         }
-
     });
 
+    return (
+        <div className="h-full lg:flex flex-col items-center justify-center gap-10 relative transition-all">
 
-    return <div className="h-full lg:flex flex-col items-center justify-center gap-10 relative transition-all">
             <motion.div className={`p-5 absolute z-100 opacity-100 transition-all ease-out right-40`} ref={divRef}>
                 <button className="bg-cyan-500 w-full mt-10! mx-auto animate-bounce text-xl! shadow-xl/30">
                     Entre em contato
                 </button>
             </motion.div>
 
-            <section
-                className="flex flex-col justify-start items-center gap-5 relative pt-10!
-            before:content-[''] before:absolute before:inset-0 before:-z-10 before:h-full before:w-9/10 before:border-b before:rounded-lg before:mx-auto"
-            >
-                {
-                    //H1
-                }
-
-                <h1 className="font-paladins w-full text-center py-4">UMA NOVA ERA ESTÁ CHEGANDO</h1>
-                <div className="w-full mx-auto text-center space-y-3 overflow-y-hidden!">
-                    <motion.h1
-                        className="text-3xl! font-black"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 1.8, ease: 'easeOut', delay: 0.3 }}
-                    >
-                        Bem vindo a Brits Corporation
-                    </motion.h1>
-                    <motion.h2
-                        className="text-lg! font-extralight! font-led"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 2, ease: 'easeIn', delay: 1.5 }}
-                    >
-                        Trazendo identidade, tecnologia e comunicação para o seu negócio.
-                    </motion.h2>
-                </div>
-                {
-                    //CONTEUDO
-                }
-                <div className="w-full py-10 flex flex-col lg:flex-row lg:justify-center overflow-y-hidden!">
-                    <div className="w-full lg:w-1/2 overflow-y-hidden!">
-                        <Carrosel />
-                    </div>
-
-                    <motion.div
-                        className="w-full lg:w-1/2 h-full flex flex-col justify-center items-start gap-8 text-center font-led overflow-y-hidden!"
-                        initial={{ y: '5%', opacity: 0, filter: 'blur(1px)' }}
-                        whileInView={{
-                            opacity: 1,
-                            filter: 'blur(0px)',
-                        }}
-                        viewport={{ once: true }}
-                        animate={{ y: 0, opacity: 1 }}
-                        transition={{
-                            duration: 1.5,
-                            ease: 'easeIn',
-                            delay: 1.5,
-                        }}
-                    >
-                        <h1 className="text-2xl! text-center w-full font-black">Olá eu me chamo Leandro</h1>
-                        <p className="text-xl! font-extralight! w-full px-[10%]">
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem magni veniam earum
-                            itaque, neque consequuntur, ipsam suscipit provident iste reiciendis, incidunt architecto ex
-                            voluptates vero quidem enim quod? Harum, alias.
-                        </p>
-                        <p className="text-xl! font-extralight! w-full px-[10%]">
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem magni veniam earum
-                            itaque, neque consequuntur, ipsam suscipit provident iste reiciendis, incidunt architecto ex
-                            voluptates vero quidem enim quod? Harum, alias.
-                        </p>
-                        <button className="bg-cyan-500 w-1/3 mt-10! mx-auto animate-bounce text-xl! shadow-xl/30">
-                            Entre em contato
-                        </button>
-                    </motion.div>
-                </div>
-            </section>
-
             {
                 //APRESENTAÇÃO
+                <section
+                    className="flex flex-col justify-start items-center gap-5 relative pt-10!
+                    before:content-[''] before:absolute before:inset-0 before:-z-10 before:h-full before:w-9/10 before:border-b before:rounded-lg before:mx-auto"
+                >
+                    {
+                        //H1
+                    }
+
+                    <h1 className="font-paladins w-full text-center py-4">UMA NOVA ERA ESTÁ CHEGANDO</h1>
+                    <div className="w-full mx-auto text-center space-y-3 overflow-y-hidden!">
+                        <motion.h1
+                            className="text-3xl! font-black"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ duration: 1.8, ease: 'easeOut', delay: 0.3 }}
+                        >
+                            Bem vindo a Brits Corporation
+                        </motion.h1>
+                        <motion.h2
+                            className="text-lg! font-extralight! font-led"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ duration: 2, ease: 'easeIn', delay: 1.5 }}
+                        >
+                            Trazendo identidade, tecnologia e comunicação para o seu negócio.
+                        </motion.h2>
+                    </div>
+                    {
+                        //CONTEUDO
+                    }
+                    <div className="w-full py-10 flex flex-col lg:flex-row lg:justify-center overflow-y-hidden!">
+                        <div className="w-full lg:w-1/2 overflow-y-hidden!">
+                            <Carrosel />
+                        </div>
+
+                        <motion.div
+                            className="w-full lg:w-1/2 h-full flex flex-col justify-center items-start gap-8 text-center font-led overflow-y-hidden!"
+                            initial={{ y: '5%', opacity: 0, filter: 'blur(1px)' }}
+                            whileInView={{
+                                opacity: 1,
+                                filter: 'blur(0px)',
+                            }}
+                            viewport={{ once: true }}
+                            animate={{ y: 0, opacity: 1 }}
+                            transition={{
+                                duration: 1.5,
+                                ease: 'easeIn',
+                                delay: 1.5,
+                            }}
+                        >
+                            <h1 className="text-2xl! text-center w-full font-black">Olá eu me chamo Leandro</h1>
+                            <p className="text-xl! font-extralight! w-full px-[10%]">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem magni veniam earum
+                                itaque, neque consequuntur, ipsam suscipit provident iste reiciendis, incidunt
+                                architecto ex voluptates vero quidem enim quod? Harum, alias.
+                            </p>
+                            <p className="text-xl! font-extralight! w-full px-[10%]">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem magni veniam earum
+                                itaque, neque consequuntur, ipsam suscipit provident iste reiciendis, incidunt
+                                architecto ex voluptates vero quidem enim quod? Harum, alias.
+                            </p>
+                            <button className="bg-cyan-500 w-1/3 mt-10! mx-auto animate-bounce text-xl! shadow-xl/30">
+                                Entre em contato
+                            </button>
+                        </motion.div>
+                    </div>
+                </section>
+            }
+            {
+                //SOBRE
                 <About />
             }
             {
@@ -134,11 +184,10 @@ export default function Home() {
                 <h1 className="w-full text-4xl! z-50 text-center absolute bottom-25 [text-shadow:2px_2px_4px_rgba(0,0,0,0.8)] animate-bounce">
                     Continue rolando para baixo
                 </h1>
+
                 <motion.div className="w-full h-full" ref={videoRef}>
                     <motion.img
-                        onClick={() => {
-                            alert('Vamos criar um site?');
-                        }}
+                        onClick={() => { tocarSom(); }}
                         className={` mx-auto hover:cursor-pointer`}
                         _ngcontent-pyp-c55=""
                         aria-hidden="true"
@@ -295,5 +344,5 @@ export default function Home() {
                 </motion.div>
             </section>
         </div>
-    ;
+    );
 }
