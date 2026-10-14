@@ -69,17 +69,17 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
                     <div className="h-full w-full flex flex-col justify-center items-center gap-10">
                         <div className="flex justify-center items-center gap-6 w-full lg:gap-20">
                             <div className="flex gap-2">
-                                <RiWhatsappLine className="size-4" />
+                                <RiWhatsappLine className="size-10" />
                                 <a>WhatsApp</a>
                             </div>
 
                             <div className="flex gap-2">
-                                <IoLogoInstagram className="size-4" />
+                                <IoLogoInstagram className="size-10" />
                                 <a>Instagram</a>
                             </div>
 
                             <div className="flex gap-2">
-                                <MdOutlineMarkEmailUnread className="size-4" />
+                                <MdOutlineMarkEmailUnread className="size-10" />
                                 <a>Email</a>
                             </div>
                         </div>

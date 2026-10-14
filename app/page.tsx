@@ -6,6 +6,10 @@ import Values from './valores/Values';
 import Services from './servicos/Services';
 import About from './sobre/About';
 import Contact from './contato/Contact';
+import Image  from '../public/Ícone Neon de Avatar Interativo.png';
+import { CgTimelapse } from 'react-icons/cg';
+import { LuTimer } from 'react-icons/lu';
+import { BsFillAlarmFill } from 'react-icons/bs';
 
 import { motion, useScroll, useMotionValueEvent } from 'motion/react';
 import { useRef } from 'react';
@@ -25,16 +29,16 @@ export default function Home() {
             divRef.current.style.top = Math.round(scrollY.get()).toString() + 'px';
         }
 
-        /*
-        if (scrollY.get() > 2600 && scrollY.get() < 3800) {
-            videoRef.current.style.transform = `rotateY(${current / 2.2}deg)`;
+
+        if (scrollY.get() > 2600 && scrollY.get() < 40000) {
+            videoRef.current!.style.transform = `rotateY(${current / 2.2}deg)`;
         }
-            */
+
 
     });
 
     return (
-        <div className="h-full hidden lg:flex flex-col items-center justify-center gap-20 relative transition-all">
+        <div className="h-full hidden lg:flex flex-col items-center justify-center gap-10 relative transition-all">
             <motion.div className={`p-5 absolute z-100 opacity-100 transition-all ease-out right-40`} ref={divRef}>
                 <button className="bg-green-500 w-full mt-10! mx-auto animate-bounce text-xl! shadow-xl/30">
                     Entre em contato
@@ -57,7 +61,7 @@ export default function Home() {
                         animate={{ opacity: 1 }}
                         transition={{ duration: 1.8, ease: 'easeOut', delay: 0.3 }}
                     >
-                        Bem vindo a Brits Corporration
+                        Bem vindo a Brits Corporation
                     </motion.h1>
                     <motion.h2
                         className="text-lg! font-extralight! font-led"
@@ -121,13 +125,39 @@ export default function Home() {
                 //SERVIÇOS
                 <Services />
             }
+            <section
+                className="p-[0%]! relative overflow-hidden! transform-3d pt-10!
+                bg-[length:100%_100%]
+                [mask-image:linear-gradient(to_top,transparent_0%,black_10%,black_96%,transparent_100%)]
+                after:[mask-image:linear-gradient(to_top,transparent_0%,black_0%,black_80%,transparent_100%)]
+                after:rounded-2xl after:pointer-events-none"
+            >
+                <h1 className="w-full text-4xl! z-50 text-center [text-shadow:2px_2px_4px_rgba(0,0,0,0.8)]">
+                    AINDA NÃO ACABOU
+                </h1>
+                <h1 className="w-full text-4xl! z-50 text-center absolute bottom-25 [text-shadow:2px_2px_4px_rgba(0,0,0,0.8)] animate-bounce">
+                    Continue rolando para baixo
+                </h1>
+                <motion.div className="w-full h-full" ref={videoRef}>
+                    <motion.img
+                        className={` mx-auto`}
+                        _ngcontent-pyp-c55=""
+                        aria-hidden="true"
+                        src={Image.src}
+                        width={800}
+                    ></motion.img>
+                </motion.div>
+            </section>
             {
                 //CONTATO
                 <Contact />
             }
             {
                 //AGENDA
-                <section id="agendamento" className="flex flex-col items-center justify-start gap-5 h-screen!">
+                <section id="agendamento" className="flex flex-col items-center justify-start gap-10 h-screen! relative pt-15!">
+                    <CgTimelapse className="absolute right-80 bottom-60 size-30" />
+                    <LuTimer className="absolute left-80 bottom-60 size-30" />
+                    <BsFillAlarmFill className="absolute  bottom-60 size-30" />
                     <h1 className="text-2xl font-bold">Agende o seu horário</h1>
 
                     <form className="flex w-1/2 flex-col gap-5 rounded-2xl bg-white/10 p-6">
@@ -184,6 +214,28 @@ export default function Home() {
                             </select>
                         </div>
 
+                        {/* SERVIÇO */}
+                        <div className="flex flex-col gap-2">
+                            <label htmlFor="servico" className="text-sm font-medium">
+                                Serviço
+                            </label>
+
+                            <select
+                                id="servico"
+                                name="servico"
+                                required
+                                defaultValue=""
+                                className="w-full rounded-lg border border-white/20 bg-black/30 p-3 text-white outline-none focus:border-blue-400"
+                            >
+                                <option value="" disabled>
+                                    Selecione um serviço
+                                </option>
+                                <option value="">Static Landing Page</option>
+                                <option value="">Dinamic Landing Page</option>
+                                <option value="">Saas Delivy</option>
+                            </select>
+                        </div>
+
                         <div className="flex flex-col gap-2">
                             <label htmlFor="horario" className="text-sm font-medium">
                                 WhatsApp
@@ -221,7 +273,7 @@ export default function Home() {
                 </h1>
                 <motion.div className="w-full h-full">
                     <motion.video
-                        className={`object-cover h-full w-full opacity-60 rotate-x-70 rotate-y-[5deg] ... w-1/3! rounded-[100%] mx-auto`}
+                        className={`object-cover h-full w-full opacity-60 `}
                         _ngcontent-pyp-c55=""
                         aria-describedby="video-description"
                         aria-labelledby="video-description"

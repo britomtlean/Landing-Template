@@ -50,12 +50,12 @@ const Table = () => {
 
             <tbody className="w-full overflow-y-scroll rounded-b-lg">
                 <tr
-                    className="grid grid-rows-2 grid-cols-4 px-2 lg:px-10
-                          w-full py-3 bg-black/50 text-white border-xl
+                    className="grid grid-rows-2 grid-cols-4 px-2 lg:px-10 items-center
+                          w-full bg-black/50 text-white border-xl
                           font-medium font-sans hover:bg-black/40"
                 >
-                    <td>Cílios</td>
-                    <td>{(30.0).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</td>
+                    <td>Static Landing Page</td>
+                    <td>{(350.0).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</td>
                     <td>Segunda - Sexta</td>
                     <Link href="#agendar" className="hover:cursor-pointer">
                         Agendar
@@ -63,12 +63,12 @@ const Table = () => {
                 </tr>
 
                 <tr
-                    className="grid grid-rows-2 grid-cols-4 px-2 lg:px-10
-                          w-full py-3 bg-black/50 text-white border-xl
+                    className="grid grid-rows-2 grid-cols-4 px-2 lg:px-10 items-center
+                          w-full bg-black/50 text-white border-xl
                           font-medium font-sans hover:bg-black/40"
                 >
-                    <td>Unha</td>
-                    <td>{(30.0).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</td>
+                    <td>Dinamic Landing Page</td>
+                    <td>{(500.0).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</td>
                     <td>Segunda - Sexta</td>
                     <Link href="#agendar" className="hover:cursor-pointer">
                         Agendar
@@ -76,12 +76,12 @@ const Table = () => {
                 </tr>
 
                 <tr
-                    className="grid grid-rows-2 grid-cols-4 px-2 lg:px-10
-                          w-full py-3 bg-black/50 text-white border-xl
+                    className="grid grid-rows-2 grid-cols-4 px-2 lg:px-10 items-center
+                          w-full bg-black/50 text-white border-xl
                           font-medium font-sans hover:bg-black/40"
                 >
-                    <td>Cabelo</td>
-                    <td>{(30.0).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</td>
+                    <td>Saas Delivery</td>
+                    <td>{(750.0).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</td>
                     <td>Segunda - Sexta</td>
                     <Link href="#agendar" className="hover:cursor-pointer">
                         Agendar
