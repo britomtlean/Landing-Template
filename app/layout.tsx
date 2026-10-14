@@ -9,6 +9,7 @@ import MenuLateral from './menu/Menu';
 
 //FONTES
 import localFont from 'next/font/local';
+import Message from './message/Message';
 
 export const paladins = localFont({
     src: './font/paladins/paladins.ttf',
@@ -62,9 +63,16 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
                         </li>
                     </nav>
 
-                    <button className="bg-green-500">Contato</button>
+                    <button className="bg-cyan-500">Contato</button>
                 </header>
-                <main>{children}</main>
+                <main className="hidden lg:flex">{children}</main>
+
+                <main className="flex lg:hidden">
+                    <section className="flex items-center justify-center flex-col gap-5">
+                        <h1 className="w-full text-black! text-center animate-pulse text-white!">Mobile detected</h1>
+                        <Message />
+                    </section>
+                </main>
                 <footer className="shadow-xl/30 shadow-[0_0_40px_2px_rgba(180,197,223,0.5)] inset-shadow-sm border-t">
                     <div className="h-full w-full flex flex-col justify-center items-center gap-10">
                         <div className="flex justify-center items-center gap-6 w-full lg:gap-20">

@@ -23,15 +23,15 @@ const Contact = () => {
                 bg-radial from-gray-300/10 to-gray-900
                 before:content-[''] after:absolute after:inset-0 after:bg-radial after:from-gray-900/40 after:to-[#0d171f]"
             >
-                <h1 className='z-100'>Entre em contato</h1>
+                <h1 className="z-100">Entre em contato</h1>
                 <div className="w-full py-10 flex justify-center items-center z-50">
                     <Localizacao />
 
-                    <div className="flex flex-col justify-start h-full w-2/5 items-center gap-4 py-10">
+                    <div className="flex flex-col justify-start h-full w-2/5 items-center gap-4 py-15">
                         <h2 className="text-2xl! font-semibold">Mídias Sociais</h2>
-                        <button className="bg-blue-500 w-3/4">instagram</button>
-                        <button className="bg-blue-500 w-3/4">TikTok</button>
-                        <button className="bg-blue-500 w-3/4">WhatsApp</button>
+                        <button className="bg-cyan-600 w-3/4">instagram</button>
+                        <button className="bg-cyan-600 w-3/4">TikTok</button>
+                        <button className="bg-cyan-600 w-3/4">WhatsApp</button>
                     </div>
                 </div>
             </div>

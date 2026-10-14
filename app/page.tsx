@@ -7,19 +7,13 @@ import Services from './servicos/Services';
 import About from './sobre/About';
 import Contact from './contato/Contact';
 import Image  from '../public/Ícone Neon de Avatar Interativo.png';
-import { CgTimelapse } from 'react-icons/cg';
-import { LuTimer } from 'react-icons/lu';
-import { BsFillAlarmFill } from 'react-icons/bs';
 import Jaguar from '../public/jaguar(1).png'
-import { useEffect, useState } from 'react';
 
 import { motion, useScroll, useMotionValueEvent } from 'motion/react';
 import { useRef } from 'react';
-import Message from './message/Message';
 
 export default function Home() {
     const { scrollY } = useScroll();
-    const [mobile, setMobile] = useState(false);
     const divRef = useRef<HTMLDivElement | null>(null);
     const videoRef = useRef<HTMLDivElement | null>(null);
 
@@ -39,31 +33,10 @@ export default function Home() {
 
     });
 
-      useEffect(() => {
-          const media = window.matchMedia('(max-width: 767px)');
 
-          setMobile(media.matches);
-
-          const handleChange = (event: MediaQueryListEvent) => {
-              setMobile(event.matches);
-          };
-
-          media.addEventListener('change', handleChange);
-
-          return () => {
-              media.removeEventListener('change', handleChange);
-          };
-      }, []);
-
-    return mobile ? (
-        <section className="flex items-center justify-center flex-col gap-5">
-            <h1 className="w-full text-black! text-center animate-pulse text-white!">Mobile detected</h1>
-            <Message />
-        </section>
-    ) : (
-        <div className="h-full hidden lg:flex flex-col items-center justify-center gap-10 relative transition-all">
+    return <div className="h-full lg:flex flex-col items-center justify-center gap-10 relative transition-all">
             <motion.div className={`p-5 absolute z-100 opacity-100 transition-all ease-out right-40`} ref={divRef}>
-                <button className="bg-green-500 w-full mt-10! mx-auto animate-bounce text-xl! shadow-xl/30">
+                <button className="bg-cyan-500 w-full mt-10! mx-auto animate-bounce text-xl! shadow-xl/30">
                     Entre em contato
                 </button>
             </motion.div>
@@ -129,7 +102,7 @@ export default function Home() {
                             itaque, neque consequuntur, ipsam suscipit provident iste reiciendis, incidunt architecto ex
                             voluptates vero quidem enim quod? Harum, alias.
                         </p>
-                        <button className="bg-green-500 w-1/3 mt-10! mx-auto animate-bounce text-xl! shadow-xl/30">
+                        <button className="bg-cyan-500 w-1/3 mt-10! mx-auto animate-bounce text-xl! shadow-xl/30">
                             Entre em contato
                         </button>
                     </motion.div>
@@ -280,7 +253,7 @@ export default function Home() {
                         {/* Botão */}
                         <button
                             type="submit"
-                            className="w-3/4 mt-2 rounded-lg bg-blue-800 px-4 py-3 font-semibold text-white mx-auto"
+                            className="w-3/4 mt-2 rounded-lg bg-purple-600 px-4 py-3 font-semibold text-white mx-auto"
                         >
                             Agendar horário
                         </button>
@@ -322,5 +295,5 @@ export default function Home() {
                 </motion.div>
             </section>
         </div>
-    );
+    ;
 }

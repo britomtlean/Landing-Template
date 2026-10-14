@@ -10,7 +10,7 @@ export default function MenuLateral() {
     return (
         <>
             {/* Botão de abrir */}
-            <button className="border-none!" onClick={() => setAberto(true)}>
+            <button className="border-none! z-100" onClick={() => setAberto(true)}>
                 <GiHamburgerMenu className={`${'botao-menu'}`} style={{ fontSize: '2rem' }} />
             </button>
 
@@ -20,7 +20,7 @@ export default function MenuLateral() {
             {/* Menu lateral */}
             <div className={`menu-lateral ${aberto ? 'ativo' : ''}`}>
 
-                
+
                 <div className="menu-header">
                     <button className="fechar border-none!" onClick={() => setAberto(false)}>
                         <span className="text-2xl!">x</span>
