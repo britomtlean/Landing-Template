@@ -6,7 +6,7 @@ import MenuLateral from '../menu/Menu';
 const Header = () => {
     return (
         <header>
-
+            <MenuLateral />
 
             <h1 className={`font-paladins text-4xl`}>Brits</h1>
 

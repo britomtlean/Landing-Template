@@ -16,8 +16,8 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.25);
     z-index: 1001;
+    @apply bg-gray-800/80 lg:bg-black/20;
 }
 
 /* Menu lateral */
@@ -28,7 +28,7 @@
 }
 
 .menu-lateral.ativo {
-    @apply top-[8%];
+    @apply top-0;
 }
 
 /* A partir do tamanho lg */

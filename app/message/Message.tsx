@@ -75,7 +75,7 @@ https://seusite.com/pedido/${numeroPedido}`;
 
     return (
         <button
-            className="bg-green-500 z-100"
+            className="bg-green-500"
             onClick={() => {
                 whatsappMessage();
             }}
