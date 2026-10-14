@@ -17,7 +17,7 @@
     width: 100vw;
     height: 100vh;
     z-index: 1001;
-    @apply bg-gray-800/80 lg:bg-black/20;
+    @apply bg-gray-800/80 lg:bg-black/40;
 }
 
 /* Menu lateral */

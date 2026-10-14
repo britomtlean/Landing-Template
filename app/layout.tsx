@@ -29,8 +29,8 @@ export const led = localFont({
 });
 
 export const metadata: Metadata = {
-    title: 'Landind Page',
-    description: 'Minha Landing Page',
+    title: 'Brits Corporation',
+    description: 'Site para apresentação de serviços',
 };
 
 export default function RootLayout({ children }: LayoutProps<'/'>) {
@@ -43,8 +43,8 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
                 <main className="hidden lg:flex">{children}</main>
 
                 <main className="flex lg:hidden">
-                    <section className="flex items-center justify-center flex-col gap-5">
-                        <h1 className="w-full text-center text-white!">Mobile detected</h1>
+                    <section className="flex items-center justify-start flex-col pt-[20vh]! gap-5">
+                        <h1 className="w-full text-center text-white! font-led">Mobile detected</h1>
                         <Message />
                     </section>
                 </main>

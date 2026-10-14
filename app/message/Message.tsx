@@ -36,39 +36,7 @@ const Message = () => {
             .join('\n');
 
         //GERA MENSAGEM
-        const mensagem = `
-ESPAÇO FITNESS
-
-Acompanhe abaixo o pedido
-
-Pedido nº: #${numeroPedido}
-Realizado em: ${new Date().toLocaleString('pt-BR')}
-
------------------------------
-🍽️ RESUMO DO PEDIDO
-
-${resumoProdutos}
-
------------------------------
-💳 PAGAMENTO
-
-▪️ Taxa de Entrega: R$ 5,00
-▪️ Valor Total do Pedido: R$ ${pedido.valorTotal.toFixed(2).replace('.', ',')}
-
------------------------------
-🏠 ENDEREÇO DE ENTREGA
-
-${pedido.enderecoCliente}
-
-⏲️ Previsão de Entrega: 45 a 80 minutos
-
------------------------------
-🤩 ${pedido.nomeCliente}
-📞 ${pedido.contatoCliente}
-💳 Crédito
-
-Clique no link para acompanhar seu pedido:
-https://seusite.com/pedido/${numeroPedido}`;
+        const mensagem = "Gostaria de criar um site!"
 
         window.open(`https://wa.me/5521966709259?text=${encodeURIComponent(mensagem)}`, '_blank'); //ABRE UMA ABA PARA ENVIAR A MENSAGEM
     };
@@ -80,7 +48,7 @@ https://seusite.com/pedido/${numeroPedido}`;
                 whatsappMessage();
             }}
         >
-            Enviar Pedido pelo WhatsApp
+            <h1 className='font-led text-lg!'>Quero criar um site</h1>
         </button>
     );
 };
