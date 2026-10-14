@@ -10,6 +10,7 @@ import MenuLateral from './menu/Menu';
 //FONTES
 import localFont from 'next/font/local';
 import Message from './message/Message';
+import Header from './header/Header';
 
 export const paladins = localFont({
     src: './font/paladins/paladins.ttf',
@@ -40,31 +41,7 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
             <body
                 className={`${paladins.variable} ${paladins3D.variable} ${led.variable} items-center  min-w-screen min-h-screen`}
             >
-                <header>
-                    
-
-                    <h1 className={`${paladins.className} text-4xl`}>Brits</h1>
-
-                    <nav>
-                        <li>
-                            <a href="#services">Serviços</a>
-                        </li>
-                        <li>
-                            <a href="#values">Valores</a>
-                        </li>
-                        <li>
-                            <a href="#about">Sobre</a>
-                        </li>
-                        <li>
-                            <a href="#contact">Contato</a>
-                        </li>
-                        <li>
-                            <a href="#agendamento">Agendamento</a>
-                        </li>
-                    </nav>
-
-                    <button className="bg-cyan-500">Contato</button>
-                </header>
+                <Header/>
                 <main className="hidden lg:flex">{children}</main>
 
                 <main className="flex lg:hidden">

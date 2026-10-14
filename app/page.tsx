@@ -34,6 +34,7 @@ export default function Home() {
             if (!player) {
                 audio.currentTime = 0;
                 audio.play();
+                audio.loop = true;
                 setPlayer(true);
             } else {
                 audio.pause();
