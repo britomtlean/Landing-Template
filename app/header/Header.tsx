@@ -2,6 +2,7 @@
 
 import React from 'react';
 import MenuLateral from '../menu/Menu';
+import { whatsAppMessage } from '../functions/message';
 
 const Header = () => {
     return (
@@ -24,13 +25,13 @@ const Header = () => {
                     <a href="#contact">Contato</a>
                 </li>
                 <li>
-                    <a href="#agendamento">Agendar</a>
+                    <a href="#agendar">Agendar</a>
                 </li>
             </nav>
 
             <button
                 onClick={() => {
-                    alert('Funcionando');
+                    whatsAppMessage('Gostaria de criar um site');
                 }}
                 className="bg-cyan-500"
             >

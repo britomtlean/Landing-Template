@@ -40,11 +40,17 @@ export default function MenuLateral() {
                     </div>
 
                     <ul>
-                        <li>Serviços</li>
-                        <li>Valores</li>
-                        <li>Sobre</li>
-                        <li>Contato</li>
-                        <li>Agendar</li>
+                        <li>
+                            <button onClick={() => {window.location.href = "#services"; setAberto(false)}} className='w-full! h-full! border-none! p-0!'>Serviços</button>
+                        </li>
+                        <li><button onClick={() => {window.location.href = "#values"; setAberto(false)}} className='w-full! h-full! border-none! p-0!'>Valores</button>
+                        </li>
+                        <li><button onClick={() => {window.location.href = "#about"; setAberto(false)}} className='w-full! h-full! border-none! p-0!'>Sobre</button>
+                        </li>
+                        <li><button onClick={() => {window.location.href = "#contact"; setAberto(false)}} className='w-full! h-full! border-none! p-0!'>Contato</button>
+                        </li>
+                        <li><button onClick={() => {window.location.href = "#agendar"; setAberto(false)}} className='w-full! h-full! border-none! p-0!'>Agendar</button>
+                        </li>
                     </ul>
                 </div>
             }

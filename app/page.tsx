@@ -8,20 +8,22 @@ import About from './sobre/About';
 import Contact from './contato/Contact';
 import Image from '../public/Ícone Neon de Avatar Interativo.png';
 import Jaguar from '../public/jaguar(1).png';
+import { whatsAppMessage } from './functions/message';
 
 import { motion, useScroll, useMotionValueEvent } from 'motion/react';
 import { useRef, useState } from 'react';
 import { TbPlayerPause, TbPlayerPlayFilled } from 'react-icons/tb';
 
 export default function Home() {
+
     const { scrollY } = useScroll();
+
     const divRef = useRef<HTMLDivElement | null>(null);
     const imageRef = useRef<HTMLDivElement | null>(null);
-
-    const [ player, setPlayer ] = useState(false);
-
     const audioRef = useRef<HTMLAudioElement | null>(null);
     const alertRef = useRef<HTMLAudioElement | null>(null);
+
+    const [ player, setPlayer ] = useState(false);
 
     const ativarSom = () => {
         if (!audioRef.current) {
@@ -79,7 +81,12 @@ export default function Home() {
     return (
         <div className="h-full lg:flex flex-col items-center justify-center gap-10 relative transition-all">
             <motion.div className={`p-5 absolute z-100 opacity-100 transition-all ease-out right-40`} ref={divRef}>
-                <button className="bg-cyan-500 w-full mt-10! mx-auto animate-bounce text-xl! shadow-xl/30">
+                <button
+                    onClick={() => {
+                        whatsAppMessage('Gostaria de criar um site');
+                    }}
+                    className="bg-cyan-500 w-full mt-10! mx-auto animate-bounce text-xl! shadow-xl/30"
+                >
                     Entre em contato
                 </button>
             </motion.div>
@@ -89,7 +96,7 @@ export default function Home() {
                     onClick={() => {
                         ativarSom();
                     }}
-                    className='border rounded-[100%]! p-2!'
+                    className="border rounded-[100%]! p-2!"
                 >
                     {!player ? <TbPlayerPlayFilled className="size-10" /> : <TbPlayerPause className="size-10" />}
                 </button>
@@ -105,7 +112,15 @@ export default function Home() {
                         //H1
                     }
 
-                    <h1 className="font-paladins w-full text-center py-4">UMA NOVA ERA ESTÁ CHEGANDO</h1>
+                    <motion.h1
+                        className="font-paladins w-full text-center py-4 transition-all relative"
+                        initial={{ left: '-80vw' }}
+                        animate={{ left: 0 }}
+                        transition={{ delay: 0, ease: 'easeInOut', duration: 2.2 }}
+                    >
+                        UMA NOVA ERA ESTÁ CHEGANDO
+                    </motion.h1>
+
                     <div className="w-full mx-auto text-center space-y-3 overflow-y-hidden!">
                         <motion.h1
                             className="text-3xl! font-black"
@@ -158,7 +173,12 @@ export default function Home() {
                                 itaque, neque consequuntur, ipsam suscipit provident iste reiciendis, incidunt
                                 architecto ex voluptates vero quidem enim quod? Harum, alias.
                             </p>
-                            <button className="bg-cyan-500 w-1/3 mt-10! mx-auto animate-bounce text-xl! shadow-xl/30">
+                            <button
+                                onClick={() => {
+                                    whatsAppMessage('Gostaria de criar um site');
+                                }}
+                                className="bg-cyan-500 w-1/3 mt-10! mx-auto animate-bounce text-xl! shadow-xl/30"
+                            >
                                 Entre em contato
                             </button>
                         </motion.div>
@@ -211,7 +231,7 @@ export default function Home() {
             {
                 //AGENDA
                 <section
-                    id="agendamento"
+                    id="agendar"
                     className="flex flex-col items-center justify-start gap-10 h-screen! relative pt-10!"
                 >
                     <img src={Jaguar.src} className="w-30 absolute right-80 bottom-40" />

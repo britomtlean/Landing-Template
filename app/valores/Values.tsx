@@ -10,7 +10,7 @@ import Image from 'next/image';
 const Values = () => {
     return (
         <section id="values" className="flex flex-col items-center justify-center h-screen! gap-5 py-10!">
-            <div className='w-full text-center'>
+            <div className="w-full text-center">
                 <h1>Nossos Valores</h1>
             </div>
 
@@ -21,8 +21,8 @@ const Values = () => {
                     </div>
                     <h3>Eficiência</h3>
                     <p>
-                        Agende sua sessão de forma rápida e prática. O atendimento acontece por videochamada, permitindo
-                        que você cuide da sua saúde emocional no conforto da sua casa.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium Ullam, repellat laudantium
+                        quaerat excepturi at perferendis incidunt consectetur eum, cupiditate deserunt doloribus.
                     </p>
                 </div>
 
@@ -32,8 +32,8 @@ const Values = () => {
                     </div>
                     <h3>Simplicidade</h3>
                     <p>
-                        Agende sua sessão de forma rápida e prática. O atendimento acontece por videochamada, permitindo
-                        que você cuide da sua saúde emocional no conforto da sua casa.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium Ullam, repellat laudantium
+                        quaerat excepturi at perferendis incidunt consectetur eum, cupiditate deserunt doloribus.
                     </p>
                 </div>
 
@@ -43,8 +43,8 @@ const Values = () => {
                     </div>
                     <h3>Segurança</h3>
                     <p>
-                        Agende sua sessão de forma rápida e prática. O atendimento acontece por videochamada, permitindo
-                        que você cuide da sua saúde emocional no conforto da sua casa.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium Ullam, repellat laudantium
+                        quaerat excepturi at perferendis incidunt consectetur eum, cupiditate deserunt doloribus.
                     </p>
                 </div>
             </div>
@@ -56,7 +56,7 @@ const Values = () => {
                 dolorum aliquid ex iure animi.
             </p>
 
-            <h1 className='w-full font-paladins text-center'>Brits Corporation</h1>
+            <h1 className="w-full font-paladins text-center">Brits Corporation</h1>
         </section>
     );
 };

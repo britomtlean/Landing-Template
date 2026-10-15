@@ -9,6 +9,7 @@ import { MdOutlineMarkEmailUnread } from 'react-icons/md';
 import localFont from 'next/font/local';
 import Message from './message/Message';
 import Header from './header/Header';
+import Image from '../public/nickype-eye-12452_512.gif'
 
 export const paladins = localFont({
     src: './font/paladins/paladins.ttf',
@@ -39,13 +40,22 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
             <body
                 className={`${paladins.variable} ${paladins3D.variable} ${led.variable} items-center  min-w-screen min-h-screen`}
             >
-                <Header/>
+                <Header />
                 <main className="hidden lg:flex">{children}</main>
 
-                <main className="flex lg:hidden">
+                <main className="flex lg:hidden flex-col">
                     <section className="flex items-center justify-start flex-col pt-[20vh]! gap-5">
                         <h1 className="w-full text-center text-white! font-led">Mobile detected</h1>
                         <Message />
+                        <div className="w-full rounded-[100%] p-10">
+                            <img
+                                className={`  hover:cursor-pointer`}
+                                _ngcontent-pyp-c55=""
+                                aria-hidden="true"
+                                src={Image.src}
+                                width={800}
+                            ></img>
+                        </div>
                     </section>
                 </main>
 
@@ -54,17 +64,17 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
                         <div className="flex justify-center items-center gap-6 w-full lg:gap-20">
                             <div className="flex gap-2">
                                 <RiWhatsappLine className="size-10" />
-                                <a>WhatsApp</a>
+                                <a className="rounded-lg">WhatsApp</a>
                             </div>
 
                             <div className="flex gap-2">
                                 <IoLogoInstagram className="size-10" />
-                                <a>Instagram</a>
+                                <a className="rounded-lg">Instagram</a>
                             </div>
 
                             <div className="flex gap-2">
                                 <MdOutlineMarkEmailUnread className="size-10" />
-                                <a>Email</a>
+                                <a className="rounded-lg">Email</a>
                             </div>
                         </div>
 

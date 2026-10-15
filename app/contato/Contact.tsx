@@ -4,6 +4,9 @@ import React from 'react';
 import Localizacao from '../localizacao/Localizacao';
 import City from '../../public/magnific__ruas-de-cidadevista-frontal__95316.png';
 import { useState } from 'react';
+import { IoLogoInstagram } from 'react-icons/io';
+import { RiWhatsappLine } from 'react-icons/ri';
+import { FaTiktok } from 'react-icons/fa';
 
 const Contact = () => {
     const [item, setItem] = useState([City.src]);
@@ -28,10 +31,43 @@ const Contact = () => {
                     <Localizacao />
 
                     <div className="flex flex-col justify-start h-full w-2/5 items-center gap-4 py-15">
-                        <h2 className="text-2xl! font-semibold">Mídias Sociais</h2>
-                        <button className="bg-cyan-600 w-3/4">instagram</button>
-                        <button className="bg-cyan-600 w-3/4">TikTok</button>
-                        <button className="bg-cyan-600 w-3/4">WhatsApp</button>
+                        <h2 className="text-2xl! font-semibold mb-5">Mídias Sociais</h2>
+                        <div className="flex justify-center gap-5 w-full py-2">
+                            {' '}
+                            <IoLogoInstagram className="size-10" />
+                            <button
+                                onClick={() => {
+                                    window.open(`https://www.instagram.com/`, '_blank');
+                                }}
+                                className="bg-cyan-600 w-1/2"
+                            >
+                                instagram
+                            </button>
+                        </div>
+
+                        <div className="flex justify-center gap-5 w-full py-2">
+                            <FaTiktok className="size-10" />
+                            <button
+                                onClick={() => {
+                                    window.open(`https://www.tiktok.com/`, '_blank');
+                                }}
+                                className="bg-cyan-600 w-1/2"
+                            >
+                                TikTok
+                            </button>
+                        </div>
+
+                        <div className="flex justify-center gap-5 w-full py-2">
+                            <RiWhatsappLine className="size-10" />
+                            <button
+                                onClick={() => {
+                                    window.open(`https://web.whatsapp.com/`, '_blank');
+                                }}
+                                className="bg-cyan-600 w-1/2"
+                            >
+                                WhatsApp
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>

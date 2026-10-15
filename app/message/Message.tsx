@@ -29,11 +29,6 @@ const Message = () => {
     };
 
     const whatsappMessage = () => {
-        const numeroPedido = Date.now().toString().slice(-8); //GERA O ID DO PEDIDO
-
-        const resumoProdutos = pedido.produtos
-            .map((p) => `📌 ${p.quantidade} x ${p.nome} - R$ ${p.subtotal.toFixed(2).replace('.', ',')}`)
-            .join('\n');
 
         //GERA MENSAGEM
         const mensagem = "Gostaria de criar um site!"
@@ -43,7 +38,7 @@ const Message = () => {
 
     return (
         <button
-            className="bg-green-500"
+            className="bg-cyan-500"
             onClick={() => {
                 whatsappMessage();
             }}

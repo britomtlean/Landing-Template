@@ -75,6 +75,7 @@
 
 /* Itens do menu */
 .menu-lateral ul {
+    z-index: 100;
     list-style: none;
     padding: 15px 25px;
     margin: 0;
@@ -85,24 +86,7 @@
 .menu-lateral li {
     margin-bottom: 12px;
     border-radius: 8px;
-    background: #006468;
+    background: oklch(71.5% 0.143 215.221);
     width: 100%;
     padding: 4% 0;
-}
-
-.menu-lateral a {
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 1rem;
-    display: block;
-    padding: 8px;
-    border-radius: 4px;
-    transition:
-        background 0.3s,
-        color 0.3s;
-}
-
-.menu-lateral a:hover {
-    background: #007bff;
-    color: #fff;
 }
