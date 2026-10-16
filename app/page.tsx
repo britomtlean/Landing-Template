@@ -68,19 +68,22 @@ export default function Home() {
 
         if (!divRef.current) return;
 
-        if (scrollY.get() > 1400) {
+        if (scrollY.get() > 750) {
             divRef.current.style.opacity = '1';
             divRef.current.style.top = Math.round(scrollY.get()).toString() + 'px';
         }
 
-        if (scrollY.get() > 2600 && scrollY.get() < 40000) {
+        if (scrollY.get() > 2500 && scrollY.get() < 4380) {
             imageRef.current!.style.transform = `rotateY(${current / 2.2}deg)`;
         }
     });
 
     return (
         <div className="h-full lg:flex flex-col items-center justify-center gap-10 relative transition-all">
-            <motion.div className={`p-5 absolute z-100 opacity-100 transition-all ease-out right-40`} ref={divRef}>
+            <motion.div
+                className={`p-5 absolute z-100 opacity-100 transition-all ease-out lg:right-[3%] 2xl:right-[8%]`}
+                ref={divRef}
+            >
                 <button
                     onClick={() => {
                         whatsAppMessage('Gostaria de criar um site');
@@ -91,7 +94,7 @@ export default function Home() {
                 </button>
             </motion.div>
 
-            <motion.div className={`p-5 absolute z-100 top-10 right-80`}>
+            <motion.div className={`p-5 absolute z-100 top-10 lg:right-[3%] 2xl:right-[8%]`}>
                 <button
                     onClick={() => {
                         ativarSom();
@@ -105,7 +108,7 @@ export default function Home() {
             {
                 //APRESENTAÇÃO
                 <section
-                    className="flex flex-col justify-start items-center gap-5 relative pt-10!
+                    className="flex flex-col justify-start items-center gap-5 relative pt-10! min-h-[90vh] py-0!
                     before:content-[''] before:absolute before:inset-0 before:-z-10 before:h-full before:w-9/10 before:border-b before:rounded-lg before:mx-auto"
                 >
                     {
@@ -177,7 +180,7 @@ export default function Home() {
                                 onClick={() => {
                                     whatsAppMessage('Gostaria de criar um site');
                                 }}
-                                className="bg-cyan-500 w-1/3 mt-10! mx-auto animate-bounce text-xl! shadow-xl/30"
+                                className="bg-cyan-500 w-1/3 mx-auto animate-bounce text-xl! shadow-xl/30 min-w-[202px]"
                             >
                                 Entre em contato
                             </button>
@@ -198,7 +201,7 @@ export default function Home() {
                 <Services />
             }
             <section
-                className="p-[0%]! relative overflow-hidden! transform-3d pt-10!
+                className="p-[0%]! relative overflow-hidden! transform-3d pt-15! h-screen! border
                 bg-[length:100%_100%]
                 [mask-image:linear-gradient(to_top,transparent_0%,black_10%,black_96%,transparent_100%)]
                 after:[mask-image:linear-gradient(to_top,transparent_0%,black_0%,black_80%,transparent_100%)]
@@ -207,7 +210,7 @@ export default function Home() {
                 <h1 className="w-full text-4xl! z-50 text-center [text-shadow:2px_2px_4px_rgba(0,0,0,0.8)]">
                     AINDA NÃO ACABOU
                 </h1>
-                <h1 className="w-full text-4xl! z-50 text-center absolute bottom-25 [text-shadow:2px_2px_4px_rgba(0,0,0,0.8)] animate-bounce">
+                <h1 className="w-full text-4xl! z-50 text-center absolute bottom-[13%] [text-shadow:2px_2px_4px_rgba(0,0,0,0.8)] animate-bounce">
                     Continue rolando para baixo
                 </h1>
 

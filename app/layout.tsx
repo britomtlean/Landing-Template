@@ -9,7 +9,9 @@ import { MdOutlineMarkEmailUnread } from 'react-icons/md';
 import localFont from 'next/font/local';
 import Message from './message/Message';
 import Header from './header/Header';
-import Image from '../public/nickype-eye-12452_512.gif'
+import Carrosel from './carrosel/CarroselMobile';
+import Gif from '../public/olho_animado_transparente.gif'
+
 
 export const paladins = localFont({
     src: './font/paladins/paladins.ttf',
@@ -35,27 +37,57 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: LayoutProps<'/'>) {
+
+          const itens = [
+              <div key="1" className="flex h-full items-center justify-center">
+                  Seu conteúdo aqui
+              </div>,
+              <div key="2" className="flex h-full items-center justify-center b">
+                  Sim, é aqui
+              </div>,
+              <div key="3" className="flex h-full items-center justify-center">
+                  É aqui mesmo
+              </div>,
+              <div key="4" className="flex h-full items-center justify-center">
+                  Eu ja falei que é aqui
+              </div>,
+              <div key="5" className="flex h-full items-center justify-center">
+                  Acabou o conteúdo
+              </div>,
+          ];
+
+
     return (
         <html lang="pt-br" className={`h-full antialiased scroll-smooth`}>
             <body
-                className={`${paladins.variable} ${paladins3D.variable} ${led.variable} items-center  min-w-screen min-h-screen`}
+                className={`${paladins.variable} ${paladins3D.variable} ${led.variable} items-center min-w-screen min-h-screen`}
             >
                 <Header />
                 <main className="hidden lg:flex">{children}</main>
 
                 <main className="flex lg:hidden flex-col">
-                    <section className="flex items-center justify-start flex-col pt-[20vh]! gap-5">
-                        <h1 className="w-full text-center text-white! font-led">Mobile detected</h1>
-                        <Message />
-                        <div className="w-full rounded-[100%] p-10">
-                            <img
-                                className={`  hover:cursor-pointer`}
-                                _ngcontent-pyp-c55=""
-                                aria-hidden="true"
-                                src={Image.src}
-                                width={800}
-                            ></img>
+                    <section className="flex flex-col items-center justify-start h-full!">
+                        <h1 className="w-full text-center text-white! font-led my-10">Mobile detected</h1>
+                        <img
+                            className={`rounded-lg hover:cursor-pointer`}
+                            _ngcontent-pyp-c55=""
+                            aria-hidden="true"
+                            src={Gif.src}
+                            width={'300px'}
+                        ></img>
+                    </section>
+
+                    <section className="w-full h-full py-10 text-center font-led flex flex-col gap-10">
+                        <div className='w-3/4 py-2 mx-auto'>
+                            <Message />
                         </div>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit quae expedita dolorem
+                            ratione facilis similique porro, quo alias illum sunt, nostrum at consequatur temporibus
+                            nisi nihil illo iste. Cum, cumque.
+                        </p>
+
+                        <Carrosel itens={itens} />
                     </section>
                 </main>
 

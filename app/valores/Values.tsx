@@ -1,7 +1,6 @@
 import React from 'react';
 import './css/midia.css';
 import './css/style.css';
-import Diamond from '../../public/valor.png';
 import Lock from '../../public/lock.png';
 import Mind from '../../public/mindset.png';
 import Pc from '../../public/computador.png';

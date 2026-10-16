@@ -12,14 +12,6 @@
 
     }
 
-    header {
-        background: #1D3340;
-        height: 100px;
-        width: 100%;
-        display: inline-block;
-        position: fixed;
-        top: 0;
-    }
 
     #center1 {
         display: none;

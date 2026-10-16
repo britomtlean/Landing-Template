@@ -18,7 +18,7 @@ const About = () => {
             "
         >
             <div
-                className="w-full h-full px-[10%] flex flex-col justify-start items-center gap-5 relative
+                className="w-full h-full px-[5%] flex flex-col justify-start items-center gap-5 relative
                 bg-radial from-gray-300/10 to-gray-900
                 before:content-[''] after:absolute after:inset-0 after:bg-radial after:from-gray-900/40 after:to-[#0d171f]"
             >
@@ -30,9 +30,8 @@ const About = () => {
                         earum dolorum aliquid ex iure animi. Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     </p>
                     <iframe
-                        className="rounded-2xl"
-                        width="70%"
-                        height="60%"
+                        className="rounded-2xl lg:w-[90%] 2xl:w-[70%] h-[60%]"
+
                         src="https://www.youtube.com/embed/zDZoFmYppm4?si=TETj6GOhqQWOunvH"
                         title="YouTube video player"
                         frameBorder="0"
