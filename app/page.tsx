@@ -79,7 +79,7 @@ export default function Home() {
     });
 
     return (
-        <div className="h-full lg:flex flex-col items-center justify-center gap-10 relative transition-all">
+        <div className="h-full lg:flex flex-col items-center justify-center relative transition-all overflow-x-hidden!">
             <motion.div
                 className={`p-5 absolute z-100 opacity-100 transition-all ease-out lg:right-[3%] 2xl:right-[8%]`}
                 ref={divRef}
@@ -124,7 +124,7 @@ export default function Home() {
                         UMA NOVA ERA ESTÁ CHEGANDO
                     </motion.h1>
 
-                    <div className="w-full mx-auto text-center space-y-3 overflow-y-hidden!">
+                    <div className="w-full mx-auto text-center space-y-3 overflow-hidden!">
                         <motion.h1
                             className="text-3xl! font-black"
                             initial={{ opacity: 0 }}
@@ -145,13 +145,13 @@ export default function Home() {
                     {
                         //CONTEUDO
                     }
-                    <div className="w-full py-10 flex flex-col lg:flex-row lg:justify-center overflow-y-hidden!">
-                        <div className="w-full lg:w-1/2 overflow-y-hidden!">
+                    <div className="w-full py-10 flex flex-col lg:flex-row lg:justify-center overflow-hidden!">
+                        <div className="w-full lg:w-1/2 overflow-hidden!">
                             <Carrosel />
                         </div>
 
                         <motion.div
-                            className="w-full lg:w-1/2 h-full flex flex-col justify-center items-start gap-8 text-center font-led overflow-y-hidden!"
+                            className="w-full lg:w-1/2 h-full flex flex-col justify-center items-start gap-8 text-center font-led overflow-hidden!"
                             initial={{ y: '5%', opacity: 0, filter: 'blur(1px)' }}
                             whileInView={{
                                 opacity: 1,
@@ -201,20 +201,20 @@ export default function Home() {
                 <Services />
             }
             <section
-                className="p-[0%]! relative overflow-hidden! transform-3d pt-15! h-screen! border
+                className="px-[0%]! relative overflow-hidden! transform-3d py-20! 
                 bg-[length:100%_100%]
-                [mask-image:linear-gradient(to_top,transparent_0%,black_10%,black_96%,transparent_100%)]
+                [mask-image:linear-gradient(to_top,transparent_0%,black_0%,black_100%,transparent_100%)]
                 after:[mask-image:linear-gradient(to_top,transparent_0%,black_0%,black_80%,transparent_100%)]
                 after:rounded-2xl after:pointer-events-none"
             >
                 <h1 className="w-full text-4xl! z-50 text-center [text-shadow:2px_2px_4px_rgba(0,0,0,0.8)]">
                     AINDA NÃO ACABOU
                 </h1>
-                <h1 className="w-full text-4xl! z-50 text-center absolute bottom-[13%] [text-shadow:2px_2px_4px_rgba(0,0,0,0.8)] animate-bounce">
+                <h1 className="w-full text-4xl! z-50 text-center absolute bottom-[10%] [text-shadow:2px_2px_4px_rgba(0,0,0,0.8)] animate-bounce">
                     Continue rolando para baixo
                 </h1>
 
-                <motion.div className="w-full h-full" ref={imageRef}>
+                <motion.div className="w-full h-full " ref={imageRef}>
                     <motion.img
                         onClick={() => {
                             alert();

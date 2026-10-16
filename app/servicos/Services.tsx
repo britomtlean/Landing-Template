@@ -14,9 +14,9 @@ const Services = () => {
             style={{
                 backgroundImage: `url(${item})`,
             }}
-            className="flex flex-col justify-start items-center gap-5 p-[0]! h-screen!
+            className="flex flex-col justify-start items-center gap-5 p-[0]! h-screen! mb-10
             bg-[length:100%_100%]
-            [mask-image:linear-gradient(to_top,transparent_0%,black_10%,black_90%,transparent_100%)]
+            [mask-image:linear-gradient(to_top,transparent_0%,black_5%,black_90%,transparent_100%)]
             "
         >
             <div

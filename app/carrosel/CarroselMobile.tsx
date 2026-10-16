@@ -10,7 +10,7 @@ export default function Carrossel({ itens }: CarrosselProps) {
     const carrosselRef = useRef<HTMLDivElement>(null);
     const [indice, setIndice] = useState(0);
 
-    const itensVisiveis = 3;
+    const itensVisiveis = 1;
     const maxIndice = Math.max(0, itens.length - itensVisiveis);
 
     function atualizarIndice() {
@@ -26,23 +26,27 @@ export default function Carrossel({ itens }: CarrosselProps) {
         setIndice(Math.min(maxIndice, Math.max(0, novoIndice)));
     }
 
-    function navegar(direcao: number) {
-        const elemento = carrosselRef.current;
+function navegar(direcao: number) {
+    const elemento = carrosselRef.current;
 
-        if (!elemento) return;
+    if (!elemento) return;
 
-        const larguraItem = elemento.clientWidth / itensVisiveis;
+    const larguraItem = elemento.clientWidth / itensVisiveis;
 
-        elemento.scrollTo({
-            left: (indice + direcao) * larguraItem,
-            behavior: 'smooth',
-        });
-    }
+    const novoIndice = Math.max(0, Math.min(maxIndice, indice + direcao));
+
+    elemento.scrollTo({
+        left: novoIndice * larguraItem,
+        behavior: 'smooth',
+    });
+
+    setIndice(novoIndice);
+}
 
     return (
         <div className="w-full h-full overflow-hidden">
             {/* Carrossel */}
-            <div className="relative h-full w-full  bg-indigo-950/30 border rounded-2xl">
+            <div className="relative h-full w-full  bg-indigo-950/30 border rounded-2xl overflow-x-auto!">
                 <div
                     ref={carrosselRef}
                     onScroll={atualizarIndice}
@@ -61,13 +65,19 @@ export default function Carrossel({ itens }: CarrosselProps) {
                         <div
                             key={index}
                             className="
-                                box-border w-1/3 min-w-0
+                                box-border min-w-0
                                 shrink-0 snap-start
                                 p-1
-                                h-full w-full m-0 p-0
+                                h-full m-0 w-full
+                                overflow-x-auto!
                             "
                         >
-                            <div className="h-[150px]! w-full overflow-hidden rounded-2xl m-0 p-0">{item}</div>
+                            <div
+                                className="h-[150px]! w-full overflow-hidden rounded-2xl
+                            overflow-x-auto!"
+                            >
+                                {item}
+                            </div>
                         </div>
                     ))}
                 </div>

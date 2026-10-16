@@ -8,7 +8,7 @@ import Image from 'next/image';
 
 const Values = () => {
     return (
-        <section id="values" className="flex flex-col items-center justify-center h-screen! gap-5 py-10!">
+        <section id="values" className="flex flex-col items-center justify-start gap-5 py-30!">
             <div className="w-full text-center">
                 <h1>Nossos Valores</h1>
             </div>
