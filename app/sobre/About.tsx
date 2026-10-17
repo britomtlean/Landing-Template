@@ -12,7 +12,7 @@ const About = () => {
             style={{
                 backgroundImage: `url(${item})`,
             }}
-            className="flex flex-col justify-start items-center gap-5 p-[0]! 
+            className="flex flex-col justify-start items-center gap-5 p-[0]!
             bg-[length:100%_100%]
             [mask-image:linear-gradient(to_top,transparent_0%,black_8%,black_98%,transparent_100%)]
             "
@@ -23,11 +23,11 @@ const About = () => {
                 before:content-[''] after:absolute after:inset-0 after:bg-radial after:from-gray-900/40 after:to-[#0d171f]"
             >
                 <div className="w-full h-full z-50 flex justify-center flex-col items-center gap-5 py-20">
-                    <h1>Nossa história</h1>
-                    <p className="text-xl! lg:px-[15%] py-10 font-sans text-center font-bold text-orange-100!">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint molestias sequi, iste enim
-                        laudantium aliquid rerum? Totam dolor, voluptatibus quam placeat reiciendis facilis assumenda
-                        earum dolorum aliquid ex iure animi. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    <h1>Comunicação através do youtube</h1>
+                    <p className="text-xl! lg:px-[15%] py-5 text-center font-bold text-orange-100! font-led">
+                        Nesta sessão você pode fazer uma breve apresentacão de você, da sua empresa, do seu servico ou
+                        produto. Apresente a sua jornada ou explique como o servico funciona.<br></br>
+                        Veja um video demonstrativo diretamente do youtube kkkkkkkk
                     </p>
                     <iframe
                         className="rounded-2xl lg:w-[90%] 2xl:w-[60%] min-h-[400px] mb-40"

@@ -10,7 +10,15 @@ const Values = () => {
     return (
         <section id="values" className="flex flex-col items-center justify-start gap-5 py-30!">
             <div className="w-full text-center">
-                <h1>Nossos Valores</h1>
+                <h1>Apresente os seus valores</h1>
+                <p className="text-xl! lg:px-[15%] py-10 text-center font-bold text-orange-100! font-led">
+                    Aqui você demostra pelo que a sua empresa preza.<br></br>
+                    <br></br>
+                    <strong className="text-xl!">
+                        Apresente os princípios que orientam suas decisões, destacando o compromisso com a eficiência, a
+                        simplicidade e a segurança em cada solucão oferecida.
+                    </strong>
+                </p>
             </div>
 
             <div className="h-full flex items-center gap-5 h-2/5! pt-5">

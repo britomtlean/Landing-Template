@@ -60,7 +60,7 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
     return (
         <html lang="pt-br" className={`h-full antialiased scroll-smooth`}>
             <body
-                className={`${paladins.variable} ${paladins3D.variable} ${led.variable} items-center min-w-screen min-h-screen`}
+                className={`${paladins.variable} ${paladins3D.variable} ${led.variable} items-center w-screen min-h-screen`}
             >
                 <Header />
                 <main className="hidden lg:flex">{children}</main>
