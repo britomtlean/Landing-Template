@@ -46,6 +46,7 @@ function navegar(direcao: number) {
     return (
         <div className="w-full h-full overflow-hidden">
             {/* Carrossel */}
+
             <div className="relative h-full w-full  bg-indigo-950/30 border rounded-2xl overflow-x-auto!">
                 <div
                     ref={carrosselRef}

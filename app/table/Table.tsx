@@ -50,40 +50,40 @@ const Table = () => {
 
             <tbody className="w-full overflow-y-scroll rounded-b-lg">
                 <tr
-                    className="grid grid-rows-2 grid-cols-4 px-2 lg:px-10 items-center
+                    className="grid grid-rows-1 grid-cols-4 px-2 lg:px-10 items-center py-5
                           w-full bg-black/50 text-white border-xl
                           font-medium font-sans hover:bg-black/40"
                 >
                     <td>Static Landing Page</td>
                     <td>{(350.0).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</td>
                     <td>Segunda - Sexta</td>
-                    <Link href="#agendar" className="hover:cursor-pointer">
+                    <Link href="#agendar" className="hover:cursor-pointer hover:rounded-lg">
                         Agendar
                     </Link>
                 </tr>
 
                 <tr
-                    className="grid grid-rows-2 grid-cols-4 px-2 lg:px-10 items-center
+                    className="grid grid-rows-1 grid-cols-4 px-2 lg:px-10 items-center py-5
                           w-full bg-black/50 text-white border-xl
                           font-medium font-sans hover:bg-black/40"
                 >
                     <td>Dinamic Landing Page</td>
                     <td>{(500.0).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</td>
                     <td>Segunda - Sexta</td>
-                    <Link href="#agendar" className="hover:cursor-pointer">
+                    <Link href="#agendar" className="hover:cursor-pointer hover:rounded-lg">
                         Agendar
                     </Link>
                 </tr>
 
                 <tr
-                    className="grid grid-rows-2 grid-cols-4 px-2 lg:px-10 items-center
+                    className="grid grid-rows-1 grid-cols-4 px-2 lg:px-10 items-center py-5
                           w-full bg-black/50 text-white border-xl
                           font-medium font-sans hover:bg-black/40"
                 >
                     <td>Saas Delivery</td>
                     <td>{(750.0).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</td>
                     <td>Segunda - Sexta</td>
-                    <Link href="#agendar" className="hover:cursor-pointer">
+                    <Link href="#agendar" className="hover:cursor-pointer hover:rounded-lg">
                         Agendar
                     </Link>
                 </tr>

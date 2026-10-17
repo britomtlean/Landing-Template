@@ -16,13 +16,13 @@ const Contact = () => {
                 backgroundImage: `url(${item})`,
             }}
             id="contact"
-            className="flex flex-col justify-start items-center gap-5 p-[0]! h-screen!
+            className="flex flex-col justify-start items-center gap-5 p-[0]! min-h-screen!
             bg-[length:100%_100%]
-            [mask-image:linear-gradient(to_top,transparent_0%,black_7%,black_95%,transparent_100%)]
+            [mask-image:linear-gradient(to_top,transparent_0%,black_1%,black_98%,transparent_100%)]
             "
         >
             <div
-                className="w-full h-full px-[10%] flex flex-col justify-center items-center gap-5 relative
+                className="w-full h-full px-[10%] flex flex-col justify-center items-center gap-5 relative min-h-screen! py-30
                 bg-radial from-gray-300/10 to-gray-900
                 before:content-[''] after:absolute after:inset-0 after:bg-radial after:from-gray-900/40 after:to-[#0d171f]"
             >

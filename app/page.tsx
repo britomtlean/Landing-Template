@@ -79,7 +79,7 @@ export default function Home() {
     });
 
     return (
-        <div className="h-full lg:flex flex-col items-center justify-center relative transition-all overflow-x-hidden!">
+        <div className="h-full w-full flex flex-col items-center justify-center transition-all overflow-x-hidden!">
             <motion.div
                 className={`p-5 absolute z-100 opacity-100 transition-all ease-out lg:right-[3%] 2xl:right-[8%]`}
                 ref={divRef}
@@ -108,7 +108,7 @@ export default function Home() {
             {
                 //APRESENTAÇÃO
                 <section
-                    className="flex flex-col justify-start items-center gap-5 relative pt-10! min-h-[90vh] py-0!
+                    className="flex flex-col justify-start items-center gap-5 relative pt-10! min-h-[90vh] py-0! bg-none!
                     before:content-[''] before:absolute before:inset-0 before:-z-10 before:h-full before:w-9/10 before:border-b before:rounded-lg before:mx-auto"
                 >
                     {
@@ -119,7 +119,7 @@ export default function Home() {
                         className="font-paladins w-full text-center py-4 transition-all relative"
                         initial={{ left: '-80vw' }}
                         animate={{ left: 0 }}
-                        transition={{ delay: 0, ease: 'easeInOut', duration: 2.2 }}
+                        transition={{ delay: 0, ease: 'easeIn', duration: 1 }}
                     >
                         UMA NOVA ERA ESTÁ CHEGANDO
                     </motion.h1>
@@ -137,15 +137,46 @@ export default function Home() {
                             className="text-lg! font-extralight! font-led"
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
-                            transition={{ duration: 2, ease: 'easeIn', delay: 1.5 }}
+                            transition={{ duration: 2, ease: 'easeIn', delay: 0 }}
                         >
-                            Trazendo identidade, tecnologia e comunicação para o seu negócio.
+                            <motion.strong
+                                className="text-lg! font-extralight! font-led"
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ duration: 2, ease: 'easeIn', delay: 0 }}
+                            >
+                                Trazendo
+                            </motion.strong>{' '}
+                            <motion.strong
+                                className="text-lg! font-extralight! font-led"
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ duration: 2, ease: 'easeIn', delay: 0.5 }}
+                            >
+                                identidade,
+                            </motion.strong>{' '}
+                            <motion.strong
+                                className="text-lg! font-extralight! font-led"
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ duration: 2, ease: 'easeIn', delay: 1 }}
+                            >
+                                tecnologia
+                            </motion.strong>{' '}
+                            <motion.strong
+                                className="text-lg! font-extralight! font-led"
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ duration: 2, ease: 'easeIn', delay: 1.5 }}
+                            >
+                                e comunicacão para o seu negócio.
+                            </motion.strong>{' '}
                         </motion.h2>
                     </div>
                     {
                         //CONTEUDO
                     }
-                    <div className="w-full py-10 flex flex-col lg:flex-row lg:justify-center overflow-hidden!">
+                    <div className="w-full py-10 flex flex-col lg:flex-row lg:justify-center overflow-hidden! relative top-0!">
                         <div className="w-full lg:w-1/2 overflow-hidden!">
                             <Carrosel />
                         </div>
@@ -188,6 +219,7 @@ export default function Home() {
                     </div>
                 </section>
             }
+
             {
                 //SOBRE
                 <About />
@@ -201,9 +233,9 @@ export default function Home() {
                 <Services />
             }
             <section
-                className="px-[0%]! relative overflow-hidden! transform-3d py-20!
+                className="px-[0%]! relative overflow-hidden! transform-3d  min-h-screen! py-40!
                 bg-[length:100%_100%]
-                [mask-image:linear-gradient(to_top,transparent_0%,black_0%,black_100%,transparent_100%)]
+                [mask-image:linear-gradient(to_top,transparent_0%,black_10%,black_83%,transparent_100%)]
                 after:[mask-image:linear-gradient(to_top,transparent_0%,black_0%,black_80%,transparent_100%)]
                 after:rounded-2xl after:pointer-events-none"
             >
@@ -235,7 +267,9 @@ export default function Home() {
                 //AGENDA
                 <section
                     id="agendar"
-                    className="flex flex-col items-center justify-start gap-10 h-screen! relative pt-10!"
+                    className="flex flex-col items-center justify-start gap-10 min-h-screen! relative py-30!
+                    bg-[length:100%_100%]
+                    [mask-image:linear-gradient(to_bottom,transparent_0%,black_12%,black_100%,transparent_100%)]"
                 >
                     <img src={Jaguar.src} className="w-30 absolute right-80 bottom-40" />
                     <img src={Jaguar.src} className="w-30 absolute left-80 bottom-40" />
@@ -340,9 +374,11 @@ export default function Home() {
                     </form>
                 </section>
             }
-            <section className=" flex flex-col items-center gap-10">
-                <h1>O seu Delivery aqui</h1>
-                <h1 className='font-led text-center'>Venha fazer parte do meu sistema de deliverys <br></br>Ainda em desenvolvimento...</h1>
+            <section className=" flex flex-col items-center gap-10 py-30! miin-h-[100vh]!">
+                <h1>Seu Delivery aqui</h1>
+                <h1 className="font-led text-center">
+                    Venha fazer parte do nosso sistema de deliverys <br></br>Ainda em desenvolvimento...
+                </h1>
                 <div className="w-full flex justify-around gap-5">
                     <iframe
                         className="rounded-2xl h-[768px] w-full overflow-y-hidden!"
@@ -358,36 +394,40 @@ export default function Home() {
             <section
                 className="p-[0%]! relative overflow-hidden! transform-3d h-screen!
                 bg-[length:100%_100%]
-                [mask-image:linear-gradient(to_top,transparent_0%,black_5%,black_95%,transparent_100%)]
-                after:[mask-image:linear-gradient(to_top,transparent_0%,black_0%,black_80%,transparent_100%)]
-                after:rounded-2xl after:pointer-events-none"
+                [mask-image:linear-gradient(to_top,transparent_0%,black_10%,black_95%,transparent_100%)]"
             >
-                <h1 className="w-full text-4xl! z-50 text-center absolute top-30 [text-shadow:2px_2px_4px_rgba(0,0,0,0.8)]">
-                    CONGRATULATIONS
-                </h1>
-                <h1 className="w-full text-4xl! z-50 text-center absolute bottom-25 [text-shadow:2px_2px_4px_rgba(0,0,0,0.8)] animate-bounce">
-                    Obrigador por ter chego até aqui
-                </h1>
-                <motion.div className="w-full h-full">
-                    <motion.video
-                        className={`object-cover h-full w-full opacity-60 `}
-                        _ngcontent-pyp-c55=""
-                        aria-describedby="video-description"
-                        aria-labelledby="video-description"
-                        aria-hidden="true"
-                        autoPlay={true}
-                        loop={true}
-                        playsInline={true}
-                        preload="auto"
-                        poster=""
-                    >
-                        <source
+                <div
+                    className="w-full h-full flex flex-col justify-start items-center gap-5 relative min-h-screen!
+                bg-radial from-gray-300/10 to-gray-900
+                before:content-[''] after:absolute after:inset-0 after:bg-radial after:from-gray-900/0 after:to-[#0d171f]"
+                >
+                    <h1 className="w-full text-4xl! z-50 text-center absolute top-30 [text-shadow:2px_2px_4px_rgba(0,0,0,0.8)]">
+                        CONGRATULATIONS
+                    </h1>
+                    <h1 className="w-full text-4xl! z-50 text-center absolute bottom-25 [text-shadow:2px_2px_4px_rgba(0,0,0,0.8)] animate-bounce">
+                        Obrigador por ter chego até aqui
+                    </h1>
+                    <motion.div className="w-full h-full">
+                        <motion.video
+                            className={`object-cover h-full w-full opacity-60 `}
                             _ngcontent-pyp-c55=""
-                            type="video/mp4"
-                            src="https://sxcontent9668.azureedge.us/cms-assets/assets/Flight_14_Drone_Lift_Off1_20260928_Web_5b2db244f8.mp4"
-                        />
-                    </motion.video>
-                </motion.div>
+                            aria-describedby="video-description"
+                            aria-labelledby="video-description"
+                            aria-hidden="true"
+                            autoPlay={true}
+                            loop={true}
+                            playsInline={true}
+                            preload="auto"
+                            poster=""
+                        >
+                            <source
+                                _ngcontent-pyp-c55=""
+                                type="video/mp4"
+                                src="https://sxcontent9668.azureedge.us/cms-assets/assets/Flight_14_Drone_Lift_Off1_20260928_Web_5b2db244f8.mp4"
+                            />
+                        </motion.video>
+                    </motion.div>
+                </div>
             </section>
         </div>
     );

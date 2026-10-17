@@ -14,30 +14,37 @@
 }
 
 body {
-    @apply bg-radial from-gray-600 to-[#0d171f] flex flex-col justify-start ;
+    @apply bg-radial from-gray-600 to-[#0d171f] flex flex-col justify-start;
 
     header {
         @apply font-extrabold text-2xl! w-full h-[8vh] py-4 px-[5%]
         flex justify-between items-center
         lg:px-[10vw] 2xl:px-[20vw];
+
+        a {
+            @apply rounded-lg;
+        }
     }
 
     footer {
         @apply font-extrabold text-2xl! w-full h-[100px] py-4 px-[5%]
             flex justify-between items-center
             lg:px-[10vw] 2xl:px-[20vw];
+
+        a {
+            @apply rounded-lg;
+        }
     }
 
     main {
         width: 100vw;
         min-height: 80vh;
-        @apply mb-10;
     }
 
     section {
         width: 100%;
         height: 100%;
-        @apply lg:px-[5%] 2xl:px-[10%] px-[2%] py-[5%];
+        @apply lg:px-[5%] 2xl:px-[10%] px-[2%] py-[5%] bg-radial from-gray-600 to-[#0d171f];
     }
 }
 

@@ -8,7 +8,12 @@ import Image from 'next/image';
 
 const Values = () => {
     return (
-        <section id="values" className="flex flex-col items-center justify-start gap-5 py-30!">
+        <section
+            id="values"
+            className="flex flex-col items-center justify-start gap-5 min-h-screen!
+            bg-[length:100%_100%]
+            [mask-image:linear-gradient(to_bottom,transparent_0%,black_8%,black_90%,transparent_100%)]"
+        >
             <div className="w-full text-center">
                 <h1>Apresente os seus valores</h1>
                 <p className="text-xl! lg:px-[15%] py-10 text-center font-bold text-orange-100! font-led">

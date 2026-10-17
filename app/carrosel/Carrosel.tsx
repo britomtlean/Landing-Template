@@ -41,7 +41,7 @@ const Carrosel = () => {
             }}
             initial={{ left: -800 }}
             animate={{ left: 0 }}
-            transition={{ delay: 0.3, ease: 'easeOut', duration: 3 }}
+            transition={{ delay: 0.6, ease: 'easeIn', duration: 1.5 }}
         >
             <button className="border-none! z-50" onClick={returnProduct}>
                 <FaAngleLeft className="size-8 bg-black rounded-full" />

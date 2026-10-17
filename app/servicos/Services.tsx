@@ -16,17 +16,17 @@ const Services = () => {
             style={{
                 backgroundImage: `url(${item})`,
             }}
-            className="flex flex-col justify-start items-center gap-5 p-[0]! h-screen! mb-10
+            className="flex flex-col justify-start items-center gap-5 p-0! min-h-screen! relative
             bg-[length:100%_100%]
-            [mask-image:linear-gradient(to_top,transparent_0%,black_5%,black_90%,transparent_100%)]
+            [mask-image:linear-gradient(to_top,transparent_0%,black_2%,black_96%,transparent_100%)]
             "
         >
             <div
-                className="w-full h-full px-[10%] flex flex-col justify-start items-center gap-5 relative
+                className="w-full h-full px-[10%] flex flex-col justify-center items-center gap-5 min-h-screen! relative
                 bg-radial from-gray-300/10 to-gray-900
                 before:content-[''] after:absolute after:inset-0 after:bg-radial after:from-gray-900/40 after:to-[#0d171f]"
             >
-                <div className="w-full h-full z-50 flex justify-start flex-col items-center pt-20! gap-5">
+                <div className="w-full h-full z-50 flex justify-start flex-col items-center py-35 gap-5 min-h-screen!">
                     <h1>Serviços</h1>
                     <p className="text-xl! lg:px-[15%] py-10 text-center font-bold text-orange-100! font-led">
                         Aqui voce apresenta os seus servicos com os valores e a disponibilidade.<br></br>

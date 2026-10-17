@@ -14,24 +14,25 @@ const About = () => {
             }}
             className="flex flex-col justify-start items-center gap-5 p-[0]!
             bg-[length:100%_100%]
-            [mask-image:linear-gradient(to_top,transparent_0%,black_8%,black_98%,transparent_100%)]
+            [mask-image:linear-gradient(to_top,transparent_0%,black_8%,black_96%,transparent_100%)]
             "
         >
             <div
-                className="w-full h-full px-[10%] flex flex-col justify-start items-center gap-5 relative
+                className="w-full h-full px-[10%] flex flex-col justify-start items-center gap-5 relative min-h-screen!
                 bg-radial from-gray-300/10 to-gray-900
-                before:content-[''] after:absolute after:inset-0 after:bg-radial after:from-gray-900/40 after:to-[#0d171f]"
+                before:content-[''] after:absolute after:inset-0 after:bg-radial after:from-gray-900/80 after:to-[#0d171f]"
             >
                 <div className="w-full h-full z-50 flex justify-center flex-col items-center gap-5 py-20">
                     <h1>Comunicação através do youtube</h1>
                     <p className="text-xl! lg:px-[15%] py-5 text-center font-bold text-orange-100! font-led">
                         Nesta sessão você pode fazer uma breve apresentacão de você, da sua empresa, do seu servico ou
                         produto. Apresente a sua jornada ou explique como o servico funciona.<br></br>
-                        Veja um video demonstrativo diretamente do youtube kkkkkkkk
+                        <br></br>
+                        Veja um video demonstrativo diretamente do youtube
                     </p>
                     <iframe
                         className="rounded-2xl lg:w-[90%] 2xl:w-[60%] min-h-[400px] mb-40"
-                        src="https://www.youtube.com/embed/Inbg9Pcu7u8?si=VovAdFmAc6jh0JkC&amp;start=6"
+                        src="https://www.youtube.com/embed/vEwPnjqWQ-g?si=zO7DyEvQuPsNgRMt"
                         title="YouTube video player"
                         frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
