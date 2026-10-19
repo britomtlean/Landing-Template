@@ -13,6 +13,7 @@ import { whatsAppMessage } from './functions/message';
 import { motion, useScroll, useMotionValueEvent } from 'motion/react';
 import { useRef, useState } from 'react';
 import { TbPlayerPause, TbPlayerPlayFilled } from 'react-icons/tb';
+import Fred from '../public/kuzu420-freddy-14694.gif'
 
 export default function Home() {
 
@@ -271,9 +272,9 @@ export default function Home() {
                     bg-[length:100%_100%]
                     [mask-image:linear-gradient(to_bottom,transparent_0%,black_12%,black_100%,transparent_100%)]"
                 >
-                    <img src={Jaguar.src} className="w-30 absolute right-80 bottom-40" />
-                    <img src={Jaguar.src} className="w-30 absolute left-80 bottom-40" />
-                    <h1 className="absolute  bottom-50 w-full font-paladins text-center">Brits Corporation</h1>
+                    <img src={Jaguar.src} className="w-30 absolute right-80 bottom-[12%]" />
+                    <img src={Jaguar.src} className="w-30 absolute left-80 bottom-[12%]" />
+                    <h1 className="absolute bottom-[12%] w-full font-paladins text-center">Brits Corporation</h1>
                     <h1 className="text-2xl font-bold">Agende o seu horário</h1>
 
                     <form className="flex w-1/2 flex-col gap-5 rounded-2xl bg-white/10 p-6">
@@ -391,15 +392,31 @@ export default function Home() {
                     ></iframe>
                 </div>
             </section>
+
+            <section className=" flex flex-col items-center gap-10 py-30! miin-h-[100vh]!">
+                <h1>Um Dashboard do seu jeito</h1>
+                <h1 className="font-led text-center">Crie um dashboard personalizado</h1>
+                <div className="w-full flex justify-around gap-5">
+                    <iframe
+                        className="rounded-2xl h-[768px] w-full overflow-y-hidden!"
+                        src="https://legendary-lokum-5cefa7.netlify.app/"
+                        title="YouTube video player"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerPolicy="strict-origin-when-cross-origin"
+                        allowFullScreen
+                    ></iframe>
+                </div>
+            </section>
+
             <section
                 className="p-[0%]! relative overflow-hidden! transform-3d h-screen!
                 bg-[length:100%_100%]
-                [mask-image:linear-gradient(to_top,transparent_0%,black_10%,black_95%,transparent_100%)]"
+                [mask-image:linear-gradient(to_top,transparent_0%,black_10%,black_100%,transparent_100%)]"
             >
                 <div
-                    className="w-full h-full flex flex-col justify-start items-center gap-5 relative min-h-screen!
-                bg-radial from-gray-300/10 to-gray-900
-                before:content-[''] after:absolute after:inset-0 after:bg-radial after:from-gray-900/0 after:to-[#0d171f]"
+                    className="w-full h-full flex flex-col justify-center items-center gap-5 relative min-h-screen!
+           "
                 >
                     <h1 className="w-full text-4xl! z-50 text-center absolute top-30 [text-shadow:2px_2px_4px_rgba(0,0,0,0.8)]">
                         CONGRATULATIONS
@@ -407,26 +424,13 @@ export default function Home() {
                     <h1 className="w-full text-4xl! z-50 text-center absolute bottom-25 [text-shadow:2px_2px_4px_rgba(0,0,0,0.8)] animate-bounce">
                         Obrigador por ter chego até aqui
                     </h1>
-                    <motion.div className="w-full h-full">
-                        <motion.video
-                            className={`object-cover h-full w-full opacity-60 `}
-                            _ngcontent-pyp-c55=""
-                            aria-describedby="video-description"
-                            aria-labelledby="video-description"
-                            aria-hidden="true"
-                            autoPlay={true}
-                            loop={true}
-                            playsInline={true}
-                            preload="auto"
-                            poster=""
-                        >
-                            <source
-                                _ngcontent-pyp-c55=""
-                                type="video/mp4"
-                                src="https://sxcontent9668.azureedge.us/cms-assets/assets/Flight_14_Drone_Lift_Off1_20260928_Web_5b2db244f8.mp4"
-                            />
-                        </motion.video>
-                    </motion.div>
+                    <img
+                        className={`rounded-lg hover:cursor-pointer`}
+                        _ngcontent-pyp-c55=""
+                        aria-hidden="true"
+                        src={Fred.src}
+                        width={'300px'}
+                    ></img>
                 </div>
             </section>
         </div>
