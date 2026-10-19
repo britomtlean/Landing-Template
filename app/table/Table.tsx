@@ -22,7 +22,7 @@ const Table = () => {
 
     return (
         <table
-            className="w-full lg:w-1/2 lg:h-[400px] p-5 lg:p-7
+            className="w-full lg:w-1/2 h-[450px]  p-5 lg:p-7
                 flex flex-col justify-start items-center
                 row-start-1 row-span-4 col-start-4 col-span-4
                 font-bold text-center

@@ -28,7 +28,7 @@ const Carrosel = () => {
 
     return (
         <motion.div
-            className={`w-full lg:w-full min-h-[220px] lg:h-[400px] relative overflow-y-hidden!
+            className={`w-full h-full min-h-[220px]  relative overflow-y-hidden!
                 flex justify-between items-center rounded-2xl
                 object-cover
                 bg-[length:100%_100%]

@@ -26,7 +26,9 @@ const Contact = () => {
                 bg-radial from-gray-300/10 to-gray-900
                 before:content-[''] after:absolute after:inset-0 after:bg-radial after:from-gray-900/40 after:to-[#0d171f]"
             >
-                <h1 className="z-100">Entre em contato</h1>
+                <h1 className="w-full text-4xl! z-50 text-center [text-shadow:2px_2px_4px_rgba(0,0,0,0.8)] py-3">
+                    Entre em contato
+                </h1>
                 <div className="w-full py-10 flex justify-center items-center z-50">
                     <Localizacao />
 

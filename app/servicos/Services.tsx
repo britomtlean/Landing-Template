@@ -26,8 +26,10 @@ const Services = () => {
                 bg-radial from-gray-300/10 to-gray-900
                 before:content-[''] after:absolute after:inset-0 after:bg-radial after:from-gray-900/40 after:to-[#0d171f]"
             >
-                <div className="w-full h-full z-50 flex justify-start flex-col items-center py-35 gap-5 min-h-screen!">
-                    <h1>Serviços</h1>
+                <div className="w-full h-full z-50 flex justify-start flex-col items-center py-20 gap-5 min-h-screen!">
+                    <h1 className="w-full text-4xl! z-50 text-center [text-shadow:2px_2px_4px_rgba(0,0,0,0.8)] py-3">
+                        Serviços
+                    </h1>
                     <p className="text-xl! lg:px-[15%] py-10 text-center font-bold text-orange-100! font-led">
                         Aqui voce apresenta os seus servicos com os valores e a disponibilidade.<br></br>
                         Veja a tabela abaixo apresentando os meus.

@@ -81,35 +81,11 @@ export default function Home() {
 
     return (
         <div className="h-full w-full flex flex-col items-center justify-center transition-all overflow-x-hidden!">
-            <motion.div
-                className={`p-5 absolute z-100 opacity-100 transition-all ease-out lg:right-[3%] 2xl:right-[8%]`}
-                ref={divRef}
-            >
-                <button
-                    onClick={() => {
-                        whatsAppMessage('Gostaria de criar um site');
-                    }}
-                    className="bg-cyan-500 w-full mt-10! mx-auto animate-bounce text-xl! shadow-xl/30"
-                >
-                    Entre em contato
-                </button>
-            </motion.div>
-
-            <motion.div className={`p-5 absolute z-100 top-10 lg:right-[3%] 2xl:right-[8%]`}>
-                <button
-                    onClick={() => {
-                        ativarSom();
-                    }}
-                    className="border rounded-[100%]! p-2!"
-                >
-                    {!player ? <TbPlayerPlayFilled className="size-10" /> : <TbPlayerPause className="size-10" />}
-                </button>
-            </motion.div>
-
             {
                 //APRESENTAÇÃO
                 <section
-                    className="flex flex-col justify-start items-center gap-5 relative pt-10! min-h-[90vh] py-0! bg-none!
+                    className="relative py-10! h-[90vh]! bg-none!
+                    flex flex-col justify-start items-center gap-[5%]
                     before:content-[''] before:absolute before:inset-0 before:-z-10 before:h-full before:w-9/10 before:border-b before:rounded-lg before:mx-auto"
                 >
                     {
@@ -127,7 +103,7 @@ export default function Home() {
 
                     <div className="w-full mx-auto text-center space-y-3 overflow-hidden!">
                         <motion.h1
-                            className="text-3xl! font-black"
+                            className="w-full text-4xl! z-50 text-center [text-shadow:2px_2px_4px_rgba(0,0,0,0.8)]"
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ duration: 1.8, ease: 'easeOut', delay: 0.3 }}
@@ -177,7 +153,7 @@ export default function Home() {
                     {
                         //CONTEUDO
                     }
-                    <div className="w-full py-10 flex flex-col lg:flex-row lg:justify-center overflow-hidden! relative top-0!">
+                    <div className="w-full h-4/5 max-h-[500px] py-5 flex flex-col lg:flex-row lg:justify-center overflow-hidden! relative top-0!">
                         <div className="w-full lg:w-1/2 overflow-hidden!">
                             <Carrosel />
                         </div>
@@ -220,7 +196,26 @@ export default function Home() {
                     </div>
                 </section>
             }
-
+            {
+                //CARROSEL
+                <section className=" flex flex-col items-center gap-10 py-30! miin-h-[100vh]!">
+                    <h1 className="w-full text-4xl! z-50 text-center [text-shadow:2px_2px_4px_rgba(0,0,0,0.8)] py-3">
+                        Um Dashboard do seu jeito
+                    </h1>
+                    <h1 className="font-led text-center">Crie um dashboard personalizado</h1>
+                    <div className="w-full flex justify-around gap-5">
+                        <iframe
+                            className="rounded-2xl h-[768px] w-full overflow-y-hidden!"
+                            src="https://legendary-lokum-5cefa7.netlify.app/"
+                            title="YouTube video player"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerPolicy="strict-origin-when-cross-origin"
+                            allowFullScreen
+                        ></iframe>
+                    </div>
+                </section>
+            }
             {
                 //SOBRE
                 <About />
@@ -233,33 +228,36 @@ export default function Home() {
                 //SERVIÇOS
                 <Services />
             }
-            <section
-                className="px-[0%]! relative overflow-hidden! transform-3d  min-h-screen! py-40!
+            {
+                //INTERAÇÃO
+                <section
+                    className="px-[0%]! relative overflow-hidden! transform-3d  min-h-screen! py-40!
                 bg-[length:100%_100%]
                 [mask-image:linear-gradient(to_top,transparent_0%,black_10%,black_83%,transparent_100%)]
                 after:[mask-image:linear-gradient(to_top,transparent_0%,black_0%,black_80%,transparent_100%)]
                 after:rounded-2xl after:pointer-events-none"
-            >
-                <h1 className="w-full text-4xl! z-50 text-center [text-shadow:2px_2px_4px_rgba(0,0,0,0.8)]">
-                    AINDA NÃO ACABOU
-                </h1>
-                <h1 className="w-full text-4xl! z-50 text-center absolute bottom-[10%] [text-shadow:2px_2px_4px_rgba(0,0,0,0.8)] animate-bounce">
-                    Continue rolando para baixo
-                </h1>
+                >
+                    <h1 className="w-full text-4xl! z-50 text-center [text-shadow:2px_2px_4px_rgba(0,0,0,0.8)]">
+                        AINDA NÃO ACABOU
+                    </h1>
+                    <h1 className="w-full text-4xl! z-50 text-center absolute bottom-[10%] [text-shadow:2px_2px_4px_rgba(0,0,0,0.8)] animate-bounce">
+                        Continue rolando para baixo
+                    </h1>
 
-                <motion.div className="w-full h-full " ref={imageRef}>
-                    <motion.img
-                        onClick={() => {
-                            alert();
-                        }}
-                        className={` mx-auto hover:cursor-pointer`}
-                        _ngcontent-pyp-c55=""
-                        aria-hidden="true"
-                        src={Image.src}
-                        width={800}
-                    ></motion.img>
-                </motion.div>
-            </section>
+                    <motion.div className="w-full h-full " ref={imageRef}>
+                        <motion.img
+                            onClick={() => {
+                                alert();
+                            }}
+                            className={` mx-auto hover:cursor-pointer`}
+                            _ngcontent-pyp-c55=""
+                            aria-hidden="true"
+                            src={Image.src}
+                            width={800}
+                        ></motion.img>
+                    </motion.div>
+                </section>
+            }
             {
                 //CONTATO
                 <Contact />
@@ -268,16 +266,15 @@ export default function Home() {
                 //AGENDA
                 <section
                     id="agendar"
-                    className="flex flex-col items-center justify-start gap-10 min-h-screen! relative py-30!
+                    className="flex flex-col items-center justify-start gap-10 min-h-screen! py-30!
                     bg-[length:100%_100%]
                     [mask-image:linear-gradient(to_bottom,transparent_0%,black_12%,black_100%,transparent_100%)]"
                 >
-                    <img src={Jaguar.src} className="w-30 absolute right-80 bottom-[12%]" />
-                    <img src={Jaguar.src} className="w-30 absolute left-80 bottom-[12%]" />
-                    <h1 className="absolute bottom-[12%] w-full font-paladins text-center">Brits Corporation</h1>
-                    <h1 className="text-2xl font-bold">Agende o seu horário</h1>
+                    <h1 className="w-full text-4xl! z-50 text-center [text-shadow:2px_2px_4px_rgba(0,0,0,0.8)] py-3">
+                        Agende o seu horário
+                    </h1>
 
-                    <form className="flex w-1/2 flex-col gap-5 rounded-2xl bg-white/10 p-6">
+                    <form className="flex w-1/2 flex-col gap-5 rounded-2xl bg-white/10 p-6 border">
                         {/* Dia da semana */}
                         <div className="flex flex-col gap-2">
                             <label htmlFor="dia" className="text-sm font-medium">
@@ -373,66 +370,87 @@ export default function Home() {
                             Agendar horário
                         </button>
                     </form>
+
+                    <div className="w-3/4 h-1/2 flex justify-around items-center py-10">
+                        {' '}
+                        <img src={Jaguar.src} className="w-30  right-80 bottom-[12%]" />
+                        <h1 className=" bottom-[12%] w-full font-paladins text-center">Brits Corporation</h1>
+                        <img src={Jaguar.src} className="w-30  left-80 bottom-[12%]" />
+                    </div>
                 </section>
             }
-            <section className=" flex flex-col items-center gap-10 py-30! miin-h-[100vh]!">
-                <h1>Seu Delivery aqui</h1>
-                <h1 className="font-led text-center">
-                    Venha fazer parte do nosso sistema de deliverys <br></br>Ainda em desenvolvimento...
-                </h1>
-                <div className="w-full flex justify-around gap-5">
-                    <iframe
-                        className="rounded-2xl h-[768px] w-full overflow-y-hidden!"
-                        src="https://colonia-menu-production.up.railway.app/colonia_material/catalogo"
-                        title="YouTube video player"
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerPolicy="strict-origin-when-cross-origin"
-                        allowFullScreen
-                    ></iframe>
-                </div>
-            </section>
-
-            <section className=" flex flex-col items-center gap-10 py-30! miin-h-[100vh]!">
-                <h1>Um Dashboard do seu jeito</h1>
-                <h1 className="font-led text-center">Crie um dashboard personalizado</h1>
-                <div className="w-full flex justify-around gap-5">
-                    <iframe
-                        className="rounded-2xl h-[768px] w-full overflow-y-hidden!"
-                        src="https://legendary-lokum-5cefa7.netlify.app/"
-                        title="YouTube video player"
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerPolicy="strict-origin-when-cross-origin"
-                        allowFullScreen
-                    ></iframe>
-                </div>
-            </section>
-
-            <section
-                className="p-[0%]! relative overflow-hidden! transform-3d h-screen!
+            {
+                //DELIVERY
+                <section className=" flex flex-col items-center gap-14 py-30! miin-h-[100vh]!">
+                    <h1 className="w-full text-4xl! z-50 text-center [text-shadow:2px_2px_4px_rgba(0,0,0,0.8)]">
+                        Seu Delivery aqui
+                    </h1>
+                    <h1 className="font-led text-center">Venha fazer parte do nosso sistema de deliverys</h1>
+                    <div className="w-full flex justify-around gap-5">
+                        <iframe
+                            className="rounded-2xl h-[768px] w-full overflow-y-hidden!"
+                            src="https://colonia-menu-production.up.railway.app/colonia_material/catalogo"
+                            title="YouTube video player"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerPolicy="strict-origin-when-cross-origin"
+                            allowFullScreen
+                        ></iframe>
+                    </div>
+                </section>
+            }
+            {
+                //AGRADECIMENTO
+                <section
+                    className="p-[0%]! relative overflow-hidden! transform-3d h-screen!
                 bg-[length:100%_100%]
                 [mask-image:linear-gradient(to_top,transparent_0%,black_10%,black_100%,transparent_100%)]"
-            >
-                <div
-                    className="w-full h-full flex flex-col justify-center items-center gap-5 relative min-h-screen!
-           "
                 >
-                    <h1 className="w-full text-4xl! z-50 text-center absolute top-30 [text-shadow:2px_2px_4px_rgba(0,0,0,0.8)]">
-                        CONGRATULATIONS
-                    </h1>
-                    <h1 className="w-full text-4xl! z-50 text-center absolute bottom-25 [text-shadow:2px_2px_4px_rgba(0,0,0,0.8)] animate-bounce">
-                        Obrigador por ter chego até aqui
-                    </h1>
-                    <img
-                        className={`rounded-lg hover:cursor-pointer`}
-                        _ngcontent-pyp-c55=""
-                        aria-hidden="true"
-                        src={Fred.src}
-                        width={'300px'}
-                    ></img>
-                </div>
-            </section>
+                    <div className="w-full h-full flex flex-col justify-center items-center gap-5 relative min-h-screen!">
+                        <h1 className="w-full text-4xl! z-50 text-center absolute top-30 [text-shadow:2px_2px_4px_rgba(0,0,0,0.8)]">
+                            CONGRATULATIONS
+                        </h1>
+                        <h1 className="w-full text-4xl! z-50 text-center absolute bottom-25 [text-shadow:2px_2px_4px_rgba(0,0,0,0.8)] animate-bounce">
+                            Obrigado por ter chego até aqui
+                        </h1>
+                        <img
+                            className={`rounded-lg hover:cursor-pointer`}
+                            _ngcontent-pyp-c55=""
+                            aria-hidden="true"
+                            src={Fred.src}
+                            width={'400px'}
+                        ></img>
+                    </div>
+                </section>
+            }
+            {
+                //COMPONENTES DINAMICOS
+            }
+
+            <motion.div
+                className={`p-5 absolute z-100 opacity-100 transition-all ease-out lg:right-[3%] 2xl:right-[8%]`}
+                ref={divRef}
+            >
+                <button
+                    onClick={() => {
+                        whatsAppMessage('Gostaria de criar um site');
+                    }}
+                    className="bg-cyan-500 w-full mt-10! mx-auto animate-bounce text-xl! shadow-xl/30"
+                >
+                    Entre em contato
+                </button>
+            </motion.div>
+
+            <motion.div className={`p-5 absolute z-100 top-10 lg:right-[3%] 2xl:right-[8%]`}>
+                <button
+                    onClick={() => {
+                        ativarSom();
+                    }}
+                    className="border rounded-[100%]! p-2!"
+                >
+                    {!player ? <TbPlayerPlayFilled className="size-10" /> : <TbPlayerPause className="size-10" />}
+                </button>
+            </motion.div>
         </div>
     );
 }

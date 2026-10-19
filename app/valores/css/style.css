@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 .card {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 33%;
-    height: 90%;
+    height: 100%;
+    min-height: 260px;
     border: 1px solid #3ddeed;
     border-radius: 10px;
     padding: 20px;

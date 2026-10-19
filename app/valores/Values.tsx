@@ -10,12 +10,14 @@ const Values = () => {
     return (
         <section
             id="values"
-            className="flex flex-col items-center justify-start gap-5 min-h-screen!
+            className="flex flex-col items-center justify-center gap-5 min-h-screen! pt-20!
             bg-[length:100%_100%]
-            [mask-image:linear-gradient(to_bottom,transparent_0%,black_8%,black_90%,transparent_100%)]"
+            [mask-image:linear-gradient(to_bottom,transparent_0%,black_5%,black_90%,transparent_100%)]"
         >
             <div className="w-full text-center">
-                <h1>Apresente os seus valores</h1>
+                <h1 className="w-full text-4xl! z-50 text-center [text-shadow:2px_2px_4px_rgba(0,0,0,0.8)] py-3">
+                    Apresente os seus valores
+                </h1>
                 <p className="text-xl! lg:px-[15%] py-10 text-center font-bold text-orange-100! font-led">
                     Aqui você demostra pelo que a sua empresa preza.<br></br>
                     <br></br>
@@ -26,7 +28,7 @@ const Values = () => {
                 </p>
             </div>
 
-            <div className="h-full flex items-center gap-5 h-2/5! pt-5">
+            <div className="flex items-center gap-5 p-5">
                 <div className="card transition-all">
                     <div className="w-full flex justify-center">
                         <Image src={Mind.src} width={50} height={40} alt="Imagem de cadeado" />

@@ -23,7 +23,9 @@ const About = () => {
                 before:content-[''] after:absolute after:inset-0 after:bg-radial after:from-gray-900/80 after:to-[#0d171f]"
             >
                 <div className="w-full h-full z-50 flex justify-center flex-col items-center gap-5 py-20">
-                    <h1>Comunicação através do youtube</h1>
+                    <h1 className="w-full text-4xl! z-50 text-center [text-shadow:2px_2px_4px_rgba(0,0,0,0.8)] py-3">
+                        Comunicação através do youtube
+                    </h1>
                     <p className="text-xl! lg:px-[15%] py-5 text-center font-bold text-orange-100! font-led">
                         Nesta sessão você pode fazer uma breve apresentacão de você, da sua empresa, do seu servico ou
                         produto. Apresente a sua jornada ou explique como o servico funciona.<br></br>
@@ -31,7 +33,7 @@ const About = () => {
                         Veja um video demonstrativo diretamente do youtube
                     </p>
                     <iframe
-                        className="rounded-2xl lg:w-[90%] 2xl:w-[60%] min-h-[400px] mb-40"
+                        className="rounded-2xl lg:w-[90%] 2xl:w-[70%] min-h-[500px] mb-40"
                         src="https://www.youtube.com/embed/vEwPnjqWQ-g?si=zO7DyEvQuPsNgRMt"
                         title="YouTube video player"
                         frameBorder="0"
