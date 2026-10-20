@@ -129,19 +129,6 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
                         </p>
                     </section>
 
-                    <section className="flex flex-col items-center gap-10 p-0! relative bg-none! my-20">
-                        <h1 className="font-led text-2xl!">Conheca o meu portifólio</h1>
-                        <iframe
-                            className="rounded-2xl w-[90%] h-[600px] overflow-x-hidden!"
-                            src="https://leandro-brito-portifolio.netlify.app/"
-                            title="YouTube video player"
-                            frameBorder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerPolicy="strict-origin-when-cross-origin"
-                            allowFullScreen
-                        ></iframe>
-                    </section>
-
                     <section className="w-full bg-none! flex flex-col space-y-5 pb-20!">
                         <img
                             className={`rounded-lg hover:cursor-pointer mx-auto`}
