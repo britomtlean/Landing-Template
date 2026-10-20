@@ -14,7 +14,7 @@
 }
 
 body {
-    @apply bg-radial from-gray-600 to-[#0d171f] flex flex-col justify-start;
+    @apply bg-radial from-gray-600 to-[#0d171f] flex flex-col justify-start w-screen;
 
     header {
         @apply font-extrabold text-2xl! w-full h-[8vh] py-4 px-[5%]
