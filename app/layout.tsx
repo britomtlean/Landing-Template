@@ -93,11 +93,6 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
                         <Carrosel itens={itens} />
                     </section>
 
-                    <section className="flex flex-col items-center gap-10 py-10! bg-none! rounded-2xl!">
-                        <h1 className="text-2xl! font-led">Divulgue suas redes</h1>
-                        <Landing />
-                    </section>
-
                     <section className="flex flex-col items-center gap-10 bg-none! rounded-2xl!">
                         <h1 className="text-2xl! font-led text-center">Crie o seu perfil</h1>
                         <img
@@ -113,10 +108,15 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
                         </p>
                     </section>
 
-                    <section className="flex flex-col items-center gap-5 relative bg-none! pt-10!">
+                    <section className="flex flex-col items-center gap-5 pt-14! bg-none! rounded-2xl!">
+                        <h1 className="text-2xl! font-led">Divulgue suas redes</h1>
+                        <Landing />
+                    </section>
+
+                    <section className="flex flex-col items-center gap-10 p-0! relative bg-none!">
                         <h1 className="font-led text-2xl!">O seu canal no youtube</h1>
                         <iframe
-                            className="rounded-2xl w-[100%]  min-h-[200px] overflow-x-hidden!"
+                            className="rounded-2xl w-[92%]  min-h-[200px] overflow-x-hidden!"
                             src="https://www.youtube.com/embed/vEwPnjqWQ-g?si=zO7DyEvQuPsNgRMt"
                             title="YouTube video player"
                             frameBorder="0"
@@ -129,6 +129,19 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
                         </p>
                     </section>
 
+                    <section className="flex flex-col items-center gap-10 p-0! relative bg-none! my-20">
+                        <h1 className="font-led text-2xl!">Conheca o meu portifólio</h1>
+                        <iframe
+                            className="rounded-2xl w-[90%] h-[600px] overflow-x-hidden!"
+                            src="https://leandro-brito-portifolio.netlify.app/"
+                            title="YouTube video player"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerPolicy="strict-origin-when-cross-origin"
+                            allowFullScreen
+                        ></iframe>
+                    </section>
+
                     <section className="w-full bg-none! flex flex-col space-y-5 pb-20!">
                         <img
                             className={`rounded-lg hover:cursor-pointer mx-auto`}
@@ -137,11 +150,10 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
                             src={Fred.src}
                             width={'300px'}
                         ></img>
-                        <h1 className="font-led text-xl! text-center">
+                        <h1 className="font-led text-xl! text-center px-2">
                             Toda sugestao e bem vinda.
                             <br></br>
-                            Se voce tem alguma ideia de conteudo para criar sinta-se a vontade para vir ate
-                            aqui.
+                            Se voce tem alguma ideia de conteudo para criar sinta-se a vontade para vir ate aqui.
                         </h1>
                         <div className="p-3/4 w-full flex justify-center">
                             <Message />
