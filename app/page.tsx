@@ -13,10 +13,9 @@ import { whatsAppMessage } from './functions/message';
 import { motion, useScroll, useMotionValueEvent } from 'motion/react';
 import { useRef, useState } from 'react';
 import { TbPlayerPause, TbPlayerPlayFilled } from 'react-icons/tb';
-import Fred from '../public/kuzu420-freddy-14694.gif'
+import Fred from '../public/kuzu420-freddy-14694.gif';
 
 export default function Home() {
-
     const { scrollY } = useScroll();
 
     const divRef = useRef<HTMLDivElement | null>(null);
@@ -24,7 +23,7 @@ export default function Home() {
     const audioRef = useRef<HTMLAudioElement | null>(null);
     const alertRef = useRef<HTMLAudioElement | null>(null);
 
-    const [ player, setPlayer ] = useState(false);
+    const [player, setPlayer] = useState(false);
 
     const ativarSom = () => {
         if (!audioRef.current) {
@@ -49,7 +48,6 @@ export default function Home() {
     };
 
     const alert = () => {
-
         if (!alertRef.current) {
             alertRef.current = new Audio('/sounds/meme-fail-alert-locran-1-00-01.mp3');
         }
@@ -74,7 +72,7 @@ export default function Home() {
             divRef.current.style.top = Math.round(scrollY.get()).toString() + 'px';
         }
 
-        if (scrollY.get() > 2500 && scrollY.get() < 4380) {
+        if (scrollY.get() > 2500 && scrollY.get() < 5090) {
             imageRef.current!.style.transform = `rotateY(${current / 2.2}deg)`;
         }
     });
@@ -206,7 +204,7 @@ export default function Home() {
                     <div className="w-full flex justify-around gap-5">
                         <iframe
                             className="rounded-2xl h-[768px] w-full overflow-y-hidden!"
-                            src="https://legendary-lokum-5cefa7.netlify.app/"
+                            src="https://landing-carrosel.netlify.app/"
                             title="YouTube video player"
                             frameBorder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

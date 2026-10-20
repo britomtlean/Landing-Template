@@ -68,7 +68,7 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
                 <Header />
                 <main className="hidden lg:flex">{children}</main>
 
-                <main className="flex lg:hidden flex-col gap-4">
+                <main className="flex lg:hidden flex-col gap-5">
                     <section className="flex flex-col items-center justify-start h-full! bg-none!">
                         <h1 className="w-full text-center text-white! font-led my-10">Mobile detected</h1>
                         <img
@@ -80,7 +80,7 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
                         ></img>
                     </section>
 
-                    <section className="w-full h-full pt-10 text-center font-led flex flex-col gap-5 bg-none!">
+                    <section className="w-full h-full pt-10 text-center font-led flex flex-col gap-5 bg-none! mb-14">
                         <div className="w-3/4 py-2 mx-auto">
                             <Message />
                         </div>
@@ -93,12 +93,12 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
                         <Carrosel itens={itens} />
                     </section>
 
-                    <section className="flex flex-col items-center gap-10 py-20! bg-none! rounded-2xl!">
+                    <section className="flex flex-col items-center gap-10 py-10! bg-none! rounded-2xl!">
                         <h1 className="text-2xl! font-led">Divulgue suas redes</h1>
                         <Landing />
                     </section>
 
-                    <section className="flex flex-col items-center gap-10 bg-none! rounded-2xl! ">
+                    <section className="flex flex-col items-center gap-10 bg-none! rounded-2xl!">
                         <h1 className="text-2xl! font-led text-center">Crie o seu perfil</h1>
                         <img
                             className={`rounded-[100%] hover:cursor-pointer`}
@@ -113,7 +113,7 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
                         </p>
                     </section>
 
-                    <section className="flex flex-col items-center gap-5 relative bg-none!">
+                    <section className="flex flex-col items-center gap-5 relative bg-none! pt-10!">
                         <h1 className="font-led text-2xl!">O seu canal no youtube</h1>
                         <iframe
                             className="rounded-2xl w-[100%]  min-h-[200px] overflow-x-hidden!"
@@ -131,7 +131,7 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
 
                     <section className="w-full bg-none! flex flex-col space-y-5 pb-20!">
                         <img
-                            className={`rounded-lg hover:cursor-pointer`}
+                            className={`rounded-lg hover:cursor-pointer mx-auto`}
                             _ngcontent-pyp-c55=""
                             aria-hidden="true"
                             src={Fred.src}
@@ -150,7 +150,7 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
                 </main>
 
                 <footer className="shadow-xl/30 shadow-[0_0_20px_2px_rgba(180,197,223,0.5)] inset-shadow-sm border-t">
-                    <div className="h-full w-full flex flex-col justify-center items-center gap-10">
+                    <div className="h-full w-full flex flex-col justify-center items-center gap-4">
                         <div className="flex justify-center items-center gap-6 w-full lg:gap-20">
                             <div className="flex gap-2">
                                 <RiWhatsappLine className="size-10" />
